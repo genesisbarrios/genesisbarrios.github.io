@@ -129,6 +129,7 @@ body{
 	height:40%;
 	margin:2% auto;
 	float:center;
+	box-shadow: 2px 3px 2px #cccccc;
 }
 
 .image-area{
