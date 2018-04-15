@@ -201,6 +201,7 @@ footer {
  
 .footer-content {
  width:90%;
+ margin:0 auto;
  height:100%;
  display:flex;
  align-items:center;
@@ -213,12 +214,14 @@ footer {
 }
  
 .credit {
-	width:71%;
- 	justify-content: flex-start;
+	display: flex;
+	flex-basis:50%;
 }
  
 .social {
- justify-content: flex-end;
+	display: flex;
+	flex-basis:50%;
+	justify-content: flex-end;
 }
  
 .social li {
@@ -286,7 +289,7 @@ footer {
 		font-size:.7em;
 	}
 
-	.social li a {
+	.social li{
 		font-size:1em;
 	}
 }
@@ -302,7 +305,7 @@ footer {
 	}
 
 	.projects{
-		width:80%;
+		width:75%;
 	}
 
 	img{
@@ -317,8 +320,11 @@ footer {
 		font-size:.7em;
 	}
 
-	.social li a{
-		display:block;
-		font-size:.8em;
+	.footer-content{
+		font-size:.6em;
+	}
+
+	.social li{
+		font-size:.7em;
 	}
 }
