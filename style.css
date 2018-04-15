@@ -85,7 +85,7 @@ h1{
 
 h2{
 	font-family: Lato, sans-serif;
-	color:grey;
+	color:#fff;
 	font-size: 2em;
 	text-align: center;
 	font-weight: 500;
@@ -249,7 +249,6 @@ footer {
 	}
 	h2 {
 		font-size: 1em;
-		color:#bebebe;
 	}
 
 	h3{
@@ -299,10 +298,6 @@ footer {
 	
 	header{
 		background-position-x: 25%;
-	}
-
-	h2{
-		color:#d5d5d5;
 	}
 
 	.projects{
