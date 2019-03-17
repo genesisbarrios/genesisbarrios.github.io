@@ -93,7 +93,7 @@ img{
     margin-left: 12px;
 }
 
-#projLink, .view-project{
+#projLink, .view-button{
     width:20%;
     margin: 0 auto;
     
@@ -303,9 +303,12 @@ footer{
         margin-left:3px;
     }
 
-    #projLink, .project .row a{ 
-        font-size:0.3em;
+    #projLink, .view-button, .project .row a{
+        width:40%;
+        
+        font-size:0.9em;
     }
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -331,9 +334,5 @@ footer{
 
     .about-cont p{
         font-size: 0.7em;
-    }
-
-    #projLink, .project .row a{ 
-        font-size:0.2em;
     }
 }
