@@ -5,224 +5,189 @@
 	<meta name="description" content="Genesis Barrios Portfolio Website">
 	<meta name="keywords" content= "software engineer, web development, software development, programming">
 	<meta name="author" content="Genesis Barrios">
-	<link href="https://fonts.googleapis.com/css?family=Lato|PT+Sans|Tajawal" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="style.css">
+
 	<script src="scroll.js"></script>
 	<title> Genesis Barrios | Software Engineer</title>
 </head>
-
 <body>
-<header>
-	<div class="intro">			
-		<h1 class="flex-row">Genesis Barrios</h1>
-		<h2 class="flex-row">Software Engineer</h2>
-		<a href="#" class="flex-row view-projects" id="projLink">View Projects</a>
-	</div>
-</header>
+	<div class="container-fluid bg row" id="top">
+		<div class="fill col-10" >
+			<div class="row">
+				<div class="col-1">
+				</div>
 
-<section class="projects" id="projects">
-	<div class="image-area">
-		<img src="https://drive.google.com/uc?id=1APTYesK8Gch2D7PTmpitB1CgzIgUc7L3" alt="BSC Miami Website"/>
-	</div>
-	<div class="text-box">
-		<div class="text-box-content">
-			<h3>Business Software Consulting, Inc. Website</h3>
-			<p class="date">August, 2018</p>
-			<p>Built a custom WordPress theme for the Business Software Consulting website.  
-			</p>
-			<a href="https://bscmiami.com" target="_blank" class="button">View Project.</a>
+				<div class="col-3">
+					<div class="face-cont">
+						<img class="face" src="https://drive.google.com/uc?id=1japqUBN1T_J1MxP_USSy0mtIZezem12s">
+					</div>
+				</div>
+
+				<div class="col-7">
+					<div class="about-cont">
+							<h2 class="bottom-margin accent">
+								<b>Hello! My name is Genesis Barrios.</b>
+							</h2>
+							<h2 class="accent">
+								<b>I'm a Software Engineer based in Miami, Florida.</b>
+							</h2>
+						<p class="serif">
+							As a Computer Science Undergraduate at Florida International University I have studied C Programming,
+							Java Programming, Data Structures, Discrete Math, Databases, and Programming Languages. In my free time 
+							I have learned Web Development and have been employed as a Front-End Engineer since June 2017. I am 
+							also learning Back End Development with Java, as well as Node.js. 
+						</p>
+					</div>
+				</div>
+				<div class="col-1">
+				</div>
+			</div>
+			<div class="row space">
+				<a href="#" id="projLink">View Projects</a>
+			</div>
+		</div>
+		<div class="col-xs-1 sidebar">
+			<ul>
+				<li><a href="#" id="about"><i class="fas fa-2x fa-arrow-up"></i></a></li>
+				<li><a href="https://github.com/genesisbarrios" target="_blank"><i class="fab fa-2x fa-github"></i></a></li>
+				<li><a href="https://www.linkedin.com/in/genesis-barrios-788a12114" target="_blank"><i class="fab fa-2x fa-linkedin"></i></a></li>
+				<li><a href="mailto:genesisbarriosdev@gmail.com"><i class="fas fa-2x fa-envelope"></i></a></li>
+			<ul>
 		</div>
 	</div>
-</section>
 
-<section class="projects" id="projects">
-	<div class="image-area">
-		<img src="https://drive.google.com/uc?id=1MBHBDIFiWEPUa0iqhtB5xh1dKngee6W0" alt="Catering Form Project"/>
-	</div>
-	<div class="text-box">
-		<div class="text-box-content">
-			<h3>Catering Form</h3>
-			<p class="date">August, 2018</p>
-			<p>Created an application that allows users to fill out a form with their contact information
+	<div class="row" id="projects"></div>
+
+	<section class="projects d-flex">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://drive.google.com/uc?id=1APTYesK8Gch2D7PTmpitB1CgzIgUc7L3" alt="BSC Website"/>
+			<h2>Business Software Consulting Website</h2>
+			<p class="serif"> September, 2018 </p>
+			<p class="serif">I built a custom WordPress theme for the Business Software Consulting website.</p>
+			<div class="row">
+				<a href="https://bscmiami.com" target="_blank" class="view-button">View Project</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="projects green d-flex">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://drive.google.com/uc?id=1MBHBDIFiWEPUa0iqhtB5xh1dKngee6W0" alt="Catering Form Project"/>
+			<h2>Catering Form Project</h2>
+			<p class="serif"> August, 2018 </p>
+			<p class="serif"> I created an application that allows users to fill out a form with their contact information
 			and what items they want from a catering menu. Upon submission of the form, this data is stored
 			into our Microsoft SQL database, and an e-mail with the order is sent to the caterer, the requestor,
-			and the managers. 
-			</p>
-			<a href="mailto:genesisbarriosdev@gmail.com" class="button">Code available upon request.</a>
+			and the managers.</p>
+			<div class="row">
+				<a href="mailto:genesisbarriosdev@gmail.com" class="view-button">Request Code</a>
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
 
-<section class="projects" id="projects">
-	<div class="image-area">
-		<img src="https://drive.google.com/uc?id=1aIJAwt07xGLfUYaEVEatpuLGzzSkge-9" alt="Weather App"/>
-	</div>
-	<div class="text-box">
-		<div class="text-box-content">
-			<h3>Weather App</h3>
-			<p class="date">June, 2018</p>
-			<p>I built a weather app in node.js with the openweathermap api.</p>
-			<a href="https://github.com/genesisbarrios/weatherApp" target="_blank" class="button">View Project.</a>
+	<section class="projects bluegreen d-flex">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://drive.google.com/uc?id=1aIJAwt07xGLfUYaEVEatpuLGzzSkge-9" alt="Weather App"/>
+			<h2>Weather App</h2>
+			<p class="serif"> June, 2018 </p>
+			<p class="serif">I built a weather app with Node.js and the Open Weather Map API.</p>
+			<div class="row">
+				<a href="https://github.com/genesisbarrios/weatherApp" target="_blank" class="view-button"> View Project</a>
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
 
-<section class="projects">
-	<div class="image-area">
-		<img src="https://drive.google.com/uc?id=1zGuAKQCd1hMInSFJlgaPIqz_PqfUs41K" alt="Patatap Clone"/>
-	</div>
-	<div class="text-box">
-		<div class="text-box-content">
-			<h3>Shapes and Sounds - A Patatap Clone</h3>
-			<p class="date">May, 2018</p>
-			<p>I built a patatap.com clone using paper.js, howler.js, and sounds from a new song I've been working on.</p>
-			<a href="https://github.com/genesisbarrios/shapesnsounds" target="_blank" class="button">View Project.</a>
+	<section class="projects pink d-flex">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://drive.google.com/uc?id=1zGuAKQCd1hMInSFJlgaPIqz_PqfUs41K" alt="Patatap Clone"/>
+			<h2>Shapes and Sounds - a Patatap clone</h2>
+			<p class="serif"> May, 2018 </p>
+			<p class="serif">I built a patatap.com clone using paper.js, howler.js, and sounds from a new song I've been working on.</p>
+			<div class="row">
+				<a href="https://github.com/genesisbarrios/shapesnsounds" target="_blank" class="view-button"> View Project</a>
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
 
-<section class="projects">
-	<div class="image-area">
-		<img src="https://drive.google.com/uc?id=1_cBNAZaHMIfpt_0gwvaUbuKvqI-uT13u" alt="Collaboration Website"/>
-	</div>
-	<div class="text-box">
-		<div class="text-box-content">
-			<h3>Collab, Bro?</h3>
-			<p class="date">April, 2018</p>
-			<p>I built the front end of a multi-page responsive website for artists 
-			that want to collaborate with each other. I used HTML, CSS, and Bootstrap.
-			This took me about 10 hours to build. </p>
-			<a href="https://github.com/genesisbarrios/collabBro" target="_blank" class="button">View Project.</a>
+	<section class="projects d-flex red">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://drive.google.com/uc?id=1_cBNAZaHMIfpt_0gwvaUbuKvqI-uT13u" alt="Collaboration Website"/>
+			<h2>Collab, Bro?</h2>
+			<p class="serif"> April, 2018 </p>
+			<p class="serif"> I built the front end of a multi-page responsive website for artists 
+			that want to collaborate with each other. I used HTML, CSS, and Bootstrap. </p>
+			<div class="row">
+				<a href="https://github.com/genesisbarrios/collabBro" target="_blank" class="view-button"> View Project</a>
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
 
-<section class="projects">
-	<div class="image-area">
-		<img src="https://drive.google.com/uc?id=1Zrb2I2BzSoMwLkSV2khyb86Mx7a7yQQf" alt="Image Gallery"/>
-	</div>
-	<div class="text-box">
-		<div class="text-box-content">
-			<h3>3:2</h3>
-			<p class="date">March, 2018</p>
-			<p>I built a website gallery that shows images that have a 3 by 2 aspect ratio. There are different 
-			pages for different themes. I used HTML, CSS, and flex-box. This took me a few hours to build. In the
-			future I plan on allowing visitors to add their photos and create new theme pages. </p>
-			<a href="https://github.com/genesisbarrios/3by2" target="_blank" class="button">View Project.</a>
-	</div>
-	</div>
-</section>
+	<section class="projects d-flex">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://drive.google.com/uc?id=1Zrb2I2BzSoMwLkSV2khyb86Mx7a7yQQf" alt="Image Gallery"/>
+			<h2>3:2</h2>
+			<p class="serif"> March, 2018 </p>
+			<p class="serif"> I built a website gallery that shows images that have a 3 by 2 aspect ratio. There are different 
+			pages for different themes. I used HTML, and CSS. In the future I plan on allowing visitors to add their photos and create new theme pages. </p>
+			<div class="row">
+				<a href="https://github.com/genesisbarrios/3by2" target="_blank" class="view-button"> View Project </a>
+			</div>
+		</div>
+	</section>
 
-<section class="projects">
-	<div class="image-area left">
-		<img src="https://drive.google.com/uc?id=1ZqGWrnyAR6041V_obQMHPpQja-V3aMJO" alt="Artist Website"/>
-	</div>
-	<div class="text-box">
-		<div class="text-box-content">
-			<h3>Artist Website</h3>
-			<p class="date">March, 2018</p>
-			<p>I built an artist website for myself. I used HTML, CSS, and flex-box. I achieved this in a couple of days.</p>
-			<a href="https://github.com/genesisbarrios/artistwebsite" target="_blank" class="button">View Project.</a>
-	</div>
-	</div>
-</section>
+	<section class="projects d-flex blue">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://drive.google.com/uc?id=1ZqGWrnyAR6041V_obQMHPpQja-V3aMJO" alt="Artist Website"/>
+			<h2>Artist Website</h2>
+			<p class="serif"> March, 2018 </p>
+			<p class="serif">I built an artist website for myself. I used HTML, and CSS.</p>
+			<div class="row">
+				<a href="https://github.com/genesisbarrios/artistwebsite" target="_blank" class="view-button"> View Project </a>
+			</div>
+		</div>
+	</section>
 
-<section class="projects">
-	<div class="image-area left">
-		<img src="https://drive.google.com/uc?id=1Ay8NyR2Jg1UpvxoYWZV5wtKB5CS7jKtG" alt="Virtual Piano"/>
-	</div>
-	<div class="text-box">
-		<div class="text-box-content">
-			<h3>Piano</h3>
-			<p class="date">March, 2018</p>
-			<p>I created a virtual piano in Java. It is a full 88 key piano. Only one octave is visible at a time, but you can click the plus or minus buttons to navigate the octaves.</p>
-			<a href="https://github.com/genesisbarrios/VirtualPiano" target="_blank" class="button">View Project.</a>
-	</div>
-	</div>
-</section>
+	<section class="projects d-flex">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://drive.google.com/uc?id=1Ay8NyR2Jg1UpvxoYWZV5wtKB5CS7jKtG" alt="Virtual Piano"/>
+			<h2>Piano</h2>
+			<p class="serif"> March, 2018 </p>
+			<p class="serif"> I created a virtual piano in Java. It is a full 88 key piano. Only one octave is visible at a time, but you can click the plus or minus buttons to navigate the octaves. </p>
+			<div class="row">
+				<a href="https://github.com/genesisbarrios/VirtualPiano" target="_blank" class="view-button"> View Project</a>
+			</div>
+		</div>
+	</section>
 
-<section class="projects">
-	<div class="image-area left">
-		<img src="https://drive.google.com/uc?id=1g1lhDPxsTBeVAxKu8esirJ-puIGJz9vM" alt="Calculator"/>
-	</div>
-	<div class="text-box">
-		<div class="text-box-content">
-			<h3>Calculator</h3>
-			<p class="date">March, 2018</p>
-			<p>I created a simple calculator in Java.</p>
-			<a href="https://github.com/genesisbarrios/Calculator" target="_blank" class="button">View Project.</a>
-	</div>
-	</div>
-</section>
+	<section class="projects d-flex blue">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://drive.google.com/uc?id=1FMw6bO6LfzOKDr4sn9nRnJM42RGPkMCQ" alt="Bulk Texting Application"/>
+			<h2>Automated Bulk Texting</h2>
+			<p class="serif"> February, 2018 </p>
+			<p class="serif"> As our MangoHacks submission my team and I created an application in Python that takes data from an excel spreadsheet and sends custom scheduled text messages to one or many clients at a time. I mostly worked on the front end of the application. </p>
+			<div class="row">
+				<a href="mailto:genesisbarriosdev@gmail.com" class="view-button"> Request Code</a>
+			</div>
+		</div>
+	</section>
 
-<section class="projects">
-	<div class="image-area left">
-		<img src="https://drive.google.com/uc?id=1FMw6bO6LfzOKDr4sn9nRnJM42RGPkMCQ" alt="Bulk Texting Application"/>
-	</div>
-	<div class="text-box">
-		<div class="text-box-content">
-			<h3>Automated Bulk Texting</h3>
-			<p class="date">February, 2018</p>
-			<p>As our MangoHacks submission my team and I created an application in Python that takes data from an excel spreadsheet and sends custom scheduled text messages to one or many clients at a time. I mostly worked on the front end of the application.</p>
-			<a href="mailto:genesisbarriosdev@gmail.com" class="button">Code available upon request.</a>
-	</div>
-	</div>
-</section>
-
-<section class="projects">
-	<div class="image-area left">
-		<img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?h=350&auto=compress&cs=tinysrgb" alt=""/>
-	</div>
-	<div class="text-box">
-		<div class="text-box-content">
-			<h3>Listy String</h3>
-			<p class="date">October, 2017</p>
-			<p>A C program for my Computer Science I course. I used linked lists to represent strings and created functions that manipulate the linked lists to transmute the strings that they represent.</p>
-			<a href="mailto:genesisbarriosdev@gmail.com" class="button">Code available upon request.</a>
-	</div>
-	</div>
-</section>
-
-<section class="projects">
-	
-	<div class="image-area left">
-		<img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?h=350&auto=compress&cs=tinysrgb" alt=""/>
-	</div>
-	<div class="text-box">
-		<div class="text-box-content">
-			<h3>Varg</h3>
-			<p class="date">September, 2017</p>
-			<p>A C program for my Computer Science I course. I created two variadic functions that return the most frequently occuring character that was passed in.</p>
-			<a href="mailto:genesisbarriosdev@gmail.com" class="button">Code available upon request.</a>
-	</div>
-	</div>
-</section>
-
-<section class="projects">
-	
-	<div class="image-area left">
-		<img src="https://cdn.pixabay.com/photo/2014/03/07/09/43/robot-281880__340.jpg" alt="Two Player Web Hangman"/>
-	</div>
-	<div class="text-box">
-		<div class="text-box-content">
-			<h3>Two Player Hangman</h3>
-			<p class="date">March, 2017</p>
-			<p>As my TADHack Mini Orlando 2017 project submission I created a two-player web hangman game with an integrated audio call using the Temasys WebRTC APIs.</p>
-			<a href="https://github.com/bennypaulino/peer-to-peer-hangman" target="_blank" class="button">View Project.</a>
-	</div>
-	</div>
-</section>
-
-<footer>
-	<div class="footer-content">
-		<p class="credit">&copy; Copyright 2018 Genesis Barrios.<br>Designed and Developed by Genesis Barrios.</p>
-		<ul class="social">
-			<li><a href="https://github.com/genesisbarrios" target="_blank">Github</a></li>
-			<li><a href="https://www.linkedin.com/in/genesis-barrios-788a12114" target="_blank">LinkedIn</a></li>
-			<li><a href="mailto:genesisbarriosdev@gmail.com">Email</a></li>
-		</ul>
-	</div>
-</footer>
+	<section class="projects d-flex">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://cdn.pixabay.com/photo/2014/03/07/09/43/robot-281880__340.jpg" alt="Two Player Web Hangman"/>
+			<h2>Two Player Hangman</h2>
+			<p class="serif date"> March, 2017 </p>
+			<p class="serif"> As my TADHack Mini Orlando 2017 project submission I created a two-player web hangman game with an integrated audio call using the Temasys WebRTC APIs. </p>
+			<div class="row">
+				<a href="https://github.com/bennypaulino/peer-to-peer-hangman" target="_blank" class="view-button">View Project</a>
+			</div>
+		</div>
+	</section>
+	<footer class="page-footer font-small">
+		<div class="footer-copyright text-center py-3">© Copyright 2018. Designed and Developed by Genesis Barrios</div>
+	</footer>
 </body>
 </html>
-

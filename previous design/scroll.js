@@ -39,9 +39,11 @@ window.onload = function(){
         scroll("projects", 1000);
     });
 
-    // var button = document.getElementById("about");
+    var about = document.getElementById("about");
 
-    // button.addEventListener("click",function(){
-    //     scroll("top", 1000);
-    // });
+    button.addEventListener("click",function(){
+        scroll("top", 1000);
+    });
+
+
 };
