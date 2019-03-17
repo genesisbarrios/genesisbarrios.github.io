@@ -304,9 +304,9 @@ footer{
     }
 
     #projLink, .view-button, .project .row a{
-        width:40%;
+        width:35%;
         
-        font-size:0.9em;
+        font-size:0.7em;
     }
 
 }
