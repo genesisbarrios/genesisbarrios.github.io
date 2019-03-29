@@ -144,7 +144,7 @@ img{
 }
 
 .project .row a:hover, .green .project .row a:hover, .bluegreen .project .row a:hover, .red .project .row a:hover, 
-.blue .project .row a:hover, .pink .project .row a:hover{
+.blue .project .row a:hover, .pink .project .row a:hover, .darkblue .project .row a:hover{
     color: var(--main-bg-color);
     border-color: var(--main-bg-color);
     transition: color 0.5s ease;
@@ -183,13 +183,18 @@ footer{
     text-align:center;
 }
 
+.darkblue{
+    background-color:#241f58;
+    color:var(--second-bg-color);
+}
+
 .green{
     background-color:#0f5948;
     color:var(--second-bg-color);
 }
 
 .green .project .row a, .red .project .row a, 
-.blue .project .row a, .pink .project .row a{
+.blue .project .row a, .pink .project .row a, .darkblue .project .row a{
     color: var(--grey);
     border: 2px solid var(--grey);
     border-radius:10px;
