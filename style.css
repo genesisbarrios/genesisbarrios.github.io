@@ -259,6 +259,10 @@ footer{
         margin-left:30%;
     }
 
+    .project{
+        width:80%;
+    }
+
     .project p{
         font-size: 0.9em;
     }
@@ -322,6 +326,8 @@ footer{
     /* .face-cont{
         margin-top:137%;
     } */
+
+
 
     .project img{
         height: 25%;
