@@ -39,9 +39,21 @@ window.onload = function(){
         scroll("projects", 1000);
     });
 
+    
+
     // var button = document.getElementById("about");
 
     // button.addEventListener("click",function(){
     //     scroll("top", 1000);
     // });
+
+    var clientHeight = document.getElementById('top').clientHeight;
+    var face = document.getElementById('face');
+    var about = document.getElementById('about');
+
+    console.log("got elements by id");
+
+    face.style.paddingTop = clientHeight / 6;
+    about.style.paddingTop = clientHeight / 6;
+    console.log("set margins");
 };

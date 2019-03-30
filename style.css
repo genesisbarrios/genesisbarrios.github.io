@@ -40,13 +40,17 @@ img{
     border-radius: 15px;
 }
 
-.face-cont{
-    margin-top:45%;
+.face, .about-cont{
+    display:inline-block;
+}
+
+/* .face-cont{
+    margin-top:35%;
 }
 
 .about-cont{
-    margin-top:30%;
-}
+    margin-top:25%;
+} */
 
 .space{
     margin-top:50px;
@@ -93,10 +97,7 @@ img{
     margin-left: 12px;
 }
 
-#projLink, .view-button{
-    width:20%;
-    margin: 0 auto;
-    
+ #projLink{
     font-size:0.8em;
     color: var(--accent-1);
     text-transform: uppercase;
@@ -106,6 +107,12 @@ img{
 	text-align: center;
 	width:15%;
 	margin: 0 auto;
+}
+
+
+a #projLink{
+    width:35%;
+    margin-left:40%;
 }
 
 #projLink:hover{
@@ -220,7 +227,7 @@ footer{
 }
 
 
-@media only screen and (max-width: 1440px) {
+/* @media only screen and (max-width: 1440px) {
     .face-cont{
         margin-top:50%;
     }
@@ -228,17 +235,17 @@ footer{
     .about-cont{
         margin-top:30%;
     }
-}
+} */
 
 
 @media only screen and (max-width: 1100px) {
-    .face-cont{
+    /* .face-cont{
         margin-top:90%;
     }
     
     .about-cont{
         margin-top:36%;
-    }
+    } */
 
     .about-cont h2{
         font-size: 1.5em; 
@@ -250,13 +257,13 @@ footer{
 }
 
 @media only screen and (max-width: 900px) {
-    .face-cont{
+    /* .face-cont{
         margin-top:100%;
     }
 
     .about-cont{
         margin-top:42%;
-    }
+    } */
 
     .project p{
         font-size: 0.9em;
@@ -280,9 +287,9 @@ footer{
 }
 
 @media only screen and (max-width: 700px) {
-    .face-cont{
+    /* .face-cont{
         margin-top:135%;
-    }
+    } */
 
     .project img{
         height: 30%;
@@ -317,9 +324,9 @@ footer{
 }
 
 @media only screen and (max-width: 600px) {
-    .face-cont{
+    /* .face-cont{
         margin-top:137%;
-    }
+    } */
 
     .project img{
         height: 25%;
