@@ -105,13 +105,9 @@ img{
     border: 2px solid var(--accent-1);
     border-radius:10px;
 	text-align: center;
-	width:15%;
-	margin: 0 auto;
-}
-
-
-a #projLink{
-    width:35%;
+	width:35%;
+    padding-left: 10px;
+    padding-right: 10px;
     margin-left:40%;
 }
 
@@ -300,7 +296,8 @@ footer{
     }
 
     #projLink{
-        width:30%;
+        width:25%;
+        font-size:0.7em;
     }
 
     .sidebar{
@@ -315,9 +312,8 @@ footer{
         margin-left:3px;
     }
 
-    #projLink, .view-button, .project .row a{
+     .view-button, .project .row a{
         width:35%;
-        
         font-size:0.7em;
     }
 
