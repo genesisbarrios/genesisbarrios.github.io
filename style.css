@@ -253,13 +253,11 @@ footer{
 }
 
 @media only screen and (max-width: 900px) {
-    /* .face-cont{
-        margin-top:100%;
+    #projLink{
+        width:15%;
+        font-size:0.7em;
+        margin-left:30%;
     }
-
-    .about-cont{
-        margin-top:42%;
-    } */
 
     .project p{
         font-size: 0.9em;
@@ -287,18 +285,18 @@ footer{
         margin-top:135%;
     } */
 
+    #projLink{
+        width:10%;
+        font-size:0.5em;
+        margin-left:15%;
+    }
+
     .project img{
         height: 30%;
     }
 
     .about-cont h2{
         font-size: 1.0em; 
-    }
-
-    #projLink{
-        width:15%;
-        font-size:0.7em;
-        margin-left:15%;
     }
 
     .sidebar{
