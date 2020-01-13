@@ -44,12 +44,12 @@ img{
     display:inline-block;
 }
 
-/* .face-cont{
-    margin-top:35%;
-}
+/* .face{
+    margin-bottom:20%;
+} */
 
 .about-cont{
-    margin-top:25%;
+    margin-top:0%;
 } */
 
 .space{
@@ -146,7 +146,7 @@ img{
     border-radius:10px;
 }
 
-.project .row a:hover, .green .project .row a:hover, .bluegreen .project .row a:hover, .red .project .row a:hover, 
+.project .row a:hover, .green .project .row a:hover, .bluegreen .project .row a:hover, .red .project .row a:hover,
 .blue .project .row a:hover, .pink .project .row a:hover, .darkblue .project .row a:hover, .darkgrey .project .row a:hover{
     color: var(--main-bg-color);
     border-color: var(--main-bg-color);
@@ -186,6 +186,11 @@ footer{
     text-align:center;
 }
 
+.orange{
+    background-color:rgb(235,73,37);
+    color:var(--second-bg-color);
+}
+
 .darkblue{
     background-color:#241f58;
     color:var(--second-bg-color);
@@ -201,7 +206,7 @@ footer{
     color:var(--second-bg-color);
 }
 
-.green .project .row a, .red .project .row a, 
+.green .project .row a, .red .project .row a,
 .blue .project .row a, .pink .project .row a, .darkblue .project .row a, .darkgrey .project .row a{
     color: var(--grey);
     border: 2px solid var(--grey);
