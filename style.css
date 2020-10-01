@@ -254,18 +254,18 @@ footer{
     } */
 
     .about-cont h2{
-        font-size: 1.5em; 
+        font-size: 1.4em; 
     }
 
     .about-cont p{
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
 }
 
 @media only screen and (max-width: 900px) {
     #projLink{
         width:15%;
-        font-size:0.7em;
+        font-size:0.6em;
         margin-left:30%;
     }
 
@@ -274,19 +274,19 @@ footer{
     }
 
     .project p{
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
 
     .about-cont h2{
-        font-size: 1.1em; 
+        font-size: 1.0em; 
     }
 
     .about-cont h2{
-        font-size: 1.2em; 
+        font-size: 1.0em; 
     }
 
     .about-cont p{
-        font-size: 0.8em;
+        font-size: 0.7em;
     }
 
     .project img{
@@ -301,7 +301,7 @@ footer{
 
     #projLink{
         width:10%;
-        font-size:0.5em;
+        font-size:0.4em;
         margin-left:15%;
     }
 
@@ -310,11 +310,11 @@ footer{
     }
 
     .about-cont h2{
-        font-size: 1.0em; 
+        font-size: 0.9em; 
     }
 
     .sidebar{
-        width:20px;
+        width:18px;
     }
 
     .fab, .fas{ 
@@ -327,7 +327,7 @@ footer{
 
      .view-button, .project .row a{
         width:35%;
-        font-size:0.7em;
+        font-size:0.6em;
     }
 
 }
@@ -344,18 +344,18 @@ footer{
     }
 
     .project h2{
-        font-size: 1.3em;
+        font-size: 1.2em;
     }
 
     .project p{
-        font-size: 0.8em;
+        font-size: 0.7em;
     }
 
     .about-cont h2{
-        font-size: 0.9em; 
+        font-size: 0.8em; 
     }
 
     .about-cont p{
-        font-size: 0.7em;
+        font-size: 0.6em;
     }
 }
