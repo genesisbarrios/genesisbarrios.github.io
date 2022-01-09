@@ -13,7 +13,7 @@ app.get("/", function(req,res){
     res.render('index');
 });
 
-
-app.listen(3000,"localhost", function(){
+const PORT = process.env.PORT || 8080;
+app.listen(PORT,"localhost", function(){
     console.log("listening");
 });
