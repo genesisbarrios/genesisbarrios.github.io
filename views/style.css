@@ -24,6 +24,11 @@ body{
     height:100vh;
 }
 
+.webgl{
+    width:100%;
+    height: 100%;
+}
+
 .fill{
     min-height: 80%;
     height: 80%;
@@ -40,12 +45,6 @@ body{
     width:80%;
     margin-top: -50%;
     margin-left: 10%;
-}
-
-img{
-    width:100%;
-    height:auto;
-    border-radius: 15px;
 }
 
 .face, .about-cont{
@@ -237,13 +236,6 @@ footer{
 
 
 @media only screen and (max-width: 1100px) {
-    /* .face-cont{
-        margin-top:90%;
-    }
-    
-    .about-cont{
-        margin-top:36%;
-    } */
 
     .about-cont h2{
         font-size: 1.4em; 
@@ -251,6 +243,13 @@ footer{
 
     .about-cont p{
         font-size: 0.8em;
+    }
+
+    #about{
+        height:60%;
+        width:80%;
+        margin-top: -73%;
+        margin-left: 10%;
     }
 }
 
@@ -284,70 +283,24 @@ footer{
     .project img{
         height: 40%;
     }
-}
 
-@media only screen and (max-width: 700px) {
-    /* .face-cont{
-        margin-top:135%;
-    } */
-
-    #projLink{
-        width:10%;
-        font-size:0.4em;
-        margin-left:15%;
+    #about{
+        height:70%;
+        width:80%;
+        margin-top: -135%;
+        margin-left: 10%;
     }
-
-    .project img{
-        height: 30%;
+    
+    .face, .about-cont{
+        display:inline-block;
     }
-
-    .about-cont h2{
-        font-size: 0.9em; 
+    
+    .face{
+        margin-top:10%;
     }
-
-    .sidebar{
-        width:18px;
-    }
-
-    .fab, .fas{ 
-        font-size: 15px;
-    }
-
-    .sidebar ul{
-        margin-left:3px;
-    }
-
-     .view-button, .project .row a{
-        width:35%;
-        font-size:0.6em;
-    }
-
-}
-
-@media only screen and (max-width: 600px) {
-    /* .face-cont{
-        margin-top:137%;
-    } */
-
-
-
-    .project img{
-        height: 25%;
-    }
-
-    .project h2{
-        font-size: 1.2em;
-    }
-
-    .project p{
-        font-size: 0.7em;
-    }
-
-    .about-cont h2{
-        font-size: 0.8em; 
-    }
-
-    .about-cont p{
-        font-size: 0.6em;
-    }
+    
+    .about-cont{
+        font-size:0.8em;
+        margin-top:15%;
+    } 
 }
