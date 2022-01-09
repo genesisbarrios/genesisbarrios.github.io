@@ -1,0 +1,367 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<meta name="description" content="Genesis Barrios Portfolio Website">
+	<meta name="keywords" content= "software engineer, web development, software development, programming">
+	<meta name="author" content="Genesis Barrios">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="scroll.js"></script>
+	<title> Genesis Barrios | Software Engineer</title>
+</head>
+<body>
+	
+	<script type="module">
+		import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r115/build/three.module.js';
+		window.onload = function() {
+
+			// Canvas
+			const canvas = document.querySelector('canvas.webgl');
+
+			let scene, camera, renderer, particlesThree, star, stars, particlesCount;
+			let particlesMesh;
+
+			scene = new THREE.Scene();
+			camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
+			camera.position.z = 1;
+			camera.rotation.x = Math.PI/2;
+
+			renderer = new THREE.WebGLRenderer({  
+				canvas: canvas,
+				alpha: true 
+			});
+			renderer.setSize(window.innerWidth, window.innerHeight);
+			renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+			//canvas.appendChild(renderer.domElement);
+
+			const material = new THREE.MeshBasicMaterial()
+			material.color = new THREE.Color(0xffffff)
+
+			const particlesGeo = new THREE.BufferGeometry();
+			particlesCount = 10000;
+			const posArray = new Float32Array(particlesCount * 3);
+
+			for(let i=0; i < particlesCount * 3; i++){
+				posArray[i] = (Math.random() - 0.5) * 5;
+			}
+
+			particlesGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3))
+
+			particlesMesh = new THREE.Points(particlesGeo, material)
+			scene.add(particlesMesh);
+
+			document.addEventListener('mouseover', animateParticles);
+			let mouseX = 0;
+			let mouseY = 0;
+
+			function animateParticles(event){
+				console.log('animate particles')
+				mouseY = event.clientY;
+				mouseX = event.clientX;
+			}
+
+			const clock = new THREE.Clock();
+
+			const tick = () => {
+				const elapsedTime = clock.getElapsedTime()
+
+				particlesMesh.rotation.y = -.1 * elapsedTime;
+				if(mouseX > 0){
+					particlesMesh.rotation.y = mouseX * (elapsedTime * 0.0008) 
+					particlesMesh.rotation.x = mouseY * (elapsedTime * 0.0008) 
+				}
+
+				renderer.render(scene, camera);
+				window.requestAnimationFrame(tick);
+			}
+
+			tick();
+
+			var i =0;
+			var aboutText = "genesisbarrios:~$ cd genesisbarrios/About\r\ngenesisbarrios:~$ cat about.txt \r\n";
+			var aboutText2 = "\r\nHello! My name is Genesis Barrios.\r\nI'm a Software Engineer based in Miami, Florida. 🌴 \r\nI got my Bachelor's of Science in Computer Science in Spring of 2020 from Florida International University.\r\nSome of my topics of study include: C Programming, Java Programming, Data Structures, Discrete Structures,\r\nComputer Architecture, Database Management, Net Centric Computing, Software Engineering,\r\nMobile Application Development, and Programming Languages. \r\nI am currently working as an IT Resident at Assurant where I build and support applications in the Azure cloud.\r\nI have experience with various technologies including Javascript, JQuery, Bootstrap, HTML, CSS, Angular, Node.js, \r\nMongoDB, SQL, MySQL, MicrosoftSQL, Java, Tomcat, C#, .NET, Azure Cloud, Swift, and Python.";
+			var speed = 50;
+
+			function typeWriter(){
+				document.getElementById("aboutText").setAttribute("style", "white-space: pre;")
+				if(i < aboutText.length){
+					document.getElementById("aboutText").innerHTML += aboutText.charAt(i);
+					i++;
+					setTimeout(typeWriter, speed);
+				}
+				if(i == aboutText.length - 1) {
+					document.getElementById("aboutText2").innerHTML += aboutText2;
+				}
+			}
+
+			typeWriter();
+		};
+	</script>
+	<div class="bg">
+		<canvas class="webgl">
+		</canvas>
+		<div class="about">
+			<div class="container-fluid row"style="height:15%;"></div>
+			<div class="row" id="about">
+				<div class="fill col-10" style="margin-bottom:8%;">
+					<div class="row align-items-center" style="margin-bottom:7%;">
+						<div class="col-1">
+						</div>
+						<div class="col-10">
+							<div class="about-cont" >
+								<p class="bottom-margin" id="aboutText"></p>
+								<p class="bottom-margin" id="aboutText2"></p>
+							</div>
+						</div>
+						<div class="col-1">
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-1 sidebar">
+					<ul>
+						<li><a href="#" id="about"><i class="fas fa-2x fa-arrow-up"></i></a></li>
+						<li><a href="https://github.com/genesisbarrios" target="_blank"><i class="fab fa-2x fa-github"></i></a></li>
+						<li><a href="https://www.linkedin.com/in/genesis-barrios-788a12114" target="_blank"><i class="fab fa-2x fa-linkedin"></i></a></li>
+						<li><a href="mailto:genesisbarriosdev@gmail.com"><i class="fas fa-2x fa-envelope"></i></a></li>
+					<ul>
+				</div>
+			</div>
+			<div class="container-fluid row" style="height:15%;"></div>
+			
+		</div>
+	</div>
+	
+
+	<section class="projects d-flex one">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://drive.google.com/uc?id=1OO0ay-fy6IThnEkeMCp7fQ17NniygSlG" alt="MetaShop - 3D VR Web Shop"/>
+			<h2>MetaShop</h2>
+			<p class="serif" style="margin-bottom:2px;"> December 2021 </p>
+			<p class="serif" style="font-size:0.8em; margin-bottom:2px;"> A 3D interactive web store that allows users to interact with items, chat with other users, and request help from the Avaya Webchat agent. This project won 3rd place in the TadHack-Mini Orlando Hackathon at Avaya ENGAGE 2021. Future plans include perfecting the physics and GUI, updating character models in all client views so users can be in the same store together, and either setting it up as an ecommerce platform or setting it up with Metaplex to sell NFTs on the Solana blockchain.</p>
+			<div class="row" style="margin-bottom:5px;">
+				<a href="https://github.com/genesisbarrios/metashop" target="_blank" class="view-button"> View Project </a>
+			</div>
+			<div class="row">
+				<a href="https://blog.tadhack.com/2021/12/12/avaya-engage-the-results/" target="_blank" class="view-button"> Read Blog Post </a>
+			</div>
+		</div>
+	</section>
+
+	<section class="projects d-flex two">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://drive.google.com/uc?id=1ffpL3s2ejJaFSjNRW23g0moWkCbpcWJT" alt="Wavy Pads Web Synth"/>
+			<h2>Wavy Pads</h2>
+			<p class="serif"> March 2021 </p>
+			<p class="serif"> A Web Based Synth with EQ, Gain, Decay, Reverb, Octave, and Key Inputs. Built with Tone.js.</p>
+			<div class="row">
+				<a href="https://github.com/genesisbarrios/wavypads" target="_blank" class="view-button"> View Project </a>
+			</div>
+		</div>
+	</section>
+
+	<section class="projects d-flex one">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://drive.google.com/uc?id=1KzxObx4MwrtQ_iXZn2BG1tYrJnFCH2Hm" alt="Group Event Manager Mobile App"/>
+			<h2>Group Event Manager</h2>
+			<p class="serif"> October, 2020 </p>
+			<p class="serif"> A Mobile-App that allows users to create, edit, and rsvp to events. Built with the Ionic Framework.</p>
+			<div class="row">
+				<a href="https://github.com/genesisbarrios/GroupEventManager" target="_blank" class="view-button"> View Project </a>
+			</div>
+		</div>
+	</section>
+
+	<section class="projects d-flex two">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://drive.google.com/uc?id=1ps5VAAgkwMktDpkeaaOCKNdbz2BeLQPQ" alt="Jumpy Blocks"/>
+			<h2>Jumpy Blocks</h2>
+			<p class="serif"> September, 2020 </p>
+			<p class="serif"> A Flappy Bird clone built with Javascript and Phaser. </p>
+			<div class="row">
+				<a href="https://github.com/genesisbarrios/jumpyblocks" target="_blank" class="view-button"> View Project </a>
+			</div>
+		</div>
+	</section>
+
+	<section class="projects d-flex one">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://drive.google.com/uc?id=1kHyPPxqmGHWePdPgrhfEkBP2hxI0s90b"/>
+			<h2>YouTube Multiple Comment App</h2>
+			<p class="serif"> January, 2020 </p>
+			<p class="serif">I posted a YouTube video of me singing a song I made for a competition, and I received a lot of comments asking if I could put the song on spotify. I wanted to reply to all of those comments at once, so I made an application to do that for me. I built it with the YouTube API, and Javascript.</p>
+			<div class="row">
+				<a href="https://github.com/genesisbarrios/YouTubeMultipleCommentApp" target="_blank" class="view-button"> View Project</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="projects d-flex two">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://drive.google.com/uc?id=1AQCVEyUjSCshzLvIyqwEMuYjEUTwa8MF"/>
+			<h2>VirtualRollCall</h2>
+			<p class="serif"> April, 2020 </p>
+			<p class="serif">For my senior project my teammate and I recreated the documentation and attendance application for the Pinecrest police department. Built with Angular, and Node.js.</p>
+			<div class="row">
+				<a href="https://github.com/genesisbarrios/VirtualRollCallSpring2020" target="_blank" class="view-button"> View Project</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="projects d-flex one">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://drive.google.com/uc?id=1QwBhqXjcjJEMfJhX7J4b_cKfjBgzi_o1"/>
+			<h2>Geek Text</h2>
+			<p class="serif"> December, 2019 </p>
+			<p class="serif">The project for my Software Engineering class. We created a web application that allows users to create a profile, browse for books and authors and add them to their cart, and leave reviews on books. Built with Javascript, Express.js, Node.js, and MongoDB.</p>
+			<div class="row">
+				<a href="https://github.com/BarbosaO/CEN4010-Team-Project" target="_blank" class="view-button"> View Project</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="projects d-flex two">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://drive.google.com/uc?id=1Uirx5_Jkx9MH5sIOVllo7TiwKpuh0AXB"/>
+			<h2>Backroom Sessions iOS Application</h2>
+			<p class="serif"> December, 2019 </p>
+			<p class="serif">As the final project for my Mobile Application Development class, we created an iOS application for a local business. Built with Swift in XCode.</p>
+			<div class="row">
+				<a href="https://github.com/Isumy/BackroomSessions_Team_B" target="_blank" class="view-button"> View Project</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="projects d-flex one">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://drive.google.com/uc?id=10imPKHtmjV_teJIHW1F0emoVAVtyzdqa"/>
+			<h2>Database Web Interface</h2>
+			<p class="serif"> April, 2019 </p>
+			<p class="serif">An assignment for my Database Management class. A Node.js application that allows the user to manipulate several tables in a mysql database of Books.</p>
+			<div class="row">
+				<a href="mailto:genesisbarriosdev@gmail.com" target="_blank" class="view-button">Request Code</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="projects d-flex two">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://drive.google.com/uc?id=1D-FC7RuBkkuSbg-jYBQvb_ZHJv8MSN0b" alt="BMP Image Processor"/>
+			<h2>BMP Image Processor</h2>
+			<p class="serif"> March, 2019 </p>
+			<p class="serif">An assignment for my Programming 3 class. It takes a bmp image and given the options(from the command line): it will scale the image, rotate the image, or flip the image horizonally or vertically. Built in C.</p>
+			<div class="row">
+				<a href="mailto:genesisbarriosdev@gmail.com" target="_blank" class="view-button">Request Code</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="projects d-flex one">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://drive.google.com/uc?id=1MBHBDIFiWEPUa0iqhtB5xh1dKngee6W0" alt="Catering Form Project"/>
+			<h2>Catering Form Project</h2>
+			<p class="serif"> August, 2018 </p>
+			<p class="serif"> An application that allows users to fill out a form with their contact information
+			and what items they want from a menu. Upon submission, this data is stored into our Microsoft SQL database, 
+			and an e-mail with the order information is sent. Built with C#.</p>
+			<div class="row">
+				<a href="mailto:genesisbarriosdev@gmail.com" class="view-button">Request Code</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="projects d-flex two">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://drive.google.com/uc?id=1aIJAwt07xGLfUYaEVEatpuLGzzSkge-9" alt="Weather App"/>
+			<h2>Weather App</h2>
+			<p class="serif"> June, 2018 </p>
+			<p class="serif">I built a weather app with Node.js and the Open Weather Map API.</p>
+			<div class="row">
+				<a href="https://github.com/genesisbarrios/weatherApp" target="_blank" class="view-button"> View Project</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="projects d-flex one">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://drive.google.com/uc?id=1zGuAKQCd1hMInSFJlgaPIqz_PqfUs41K" alt="Patatap Clone"/>
+			<h2>Shapes and Sounds - a Patatap clone</h2>
+			<p class="serif"> May, 2018 </p>
+			<p class="serif">I built a patatap.com clone using paper.js, howler.js, and sounds from a new song I've been working on.</p>
+			<div class="row">
+				<a href="https://github.com/genesisbarrios/shapesnsounds" target="_blank" class="view-button"> View Project</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="projects d-flex two">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://drive.google.com/uc?id=1_cBNAZaHMIfpt_0gwvaUbuKvqI-uT13u" alt="Collaboration Website"/>
+			<h2>Collab, Bro?</h2>
+			<p class="serif"> April, 2018 </p>
+			<p class="serif"> I built the front end of a multi-page responsive website for artists 
+			that want to collaborate with each other. I used HTML, CSS, and Bootstrap. </p>
+			<div class="row">
+				<a href="https://github.com/genesisbarrios/collabBro" target="_blank" class="view-button"> View Project</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="projects d-flex one">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://drive.google.com/uc?id=1Zrb2I2BzSoMwLkSV2khyb86Mx7a7yQQf" alt="Image Gallery"/>
+			<h2>3:2</h2>
+			<p class="serif"> March, 2018 </p>
+			<p class="serif"> I built a website gallery that shows images that have a 3 by 2 aspect ratio. There are different 
+			pages for different themes. I used HTML, and CSS. In the future I plan on allowing visitors to add their photos and create new theme pages. </p>
+			<div class="row">
+				<a href="https://github.com/genesisbarrios/3by2" target="_blank" class="view-button"> View Project </a>
+			</div>
+		</div>
+	</section>
+
+	<section class="projects d-flex two">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://drive.google.com/uc?id=1ZqGWrnyAR6041V_obQMHPpQja-V3aMJO" alt="Artist Website"/>
+			<h2>Artist Website</h2>
+			<p class="serif"> March, 2018 </p>
+			<p class="serif">I built an artist website for myself. I used HTML, and CSS.</p>
+			<div class="row">
+				<a href="https://github.com/genesisbarrios/artistwebsite" target="_blank" class="view-button"> View Project </a>
+			</div>
+		</div>
+	</section>
+
+	<section class="projects d-flex one">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://drive.google.com/uc?id=1FMw6bO6LfzOKDr4sn9nRnJM42RGPkMCQ" alt="Bulk Texting Application"/>
+			<h2>Automated Bulk Texting</h2>
+			<p class="serif"> February, 2018 </p>
+			<p class="serif"> As our MangoHacks submission my team and I created an application in Python that takes data from an excel spreadsheet and sends custom scheduled text messages to one or many clients at a time. I mostly worked on the front end of the application. </p>
+			<div class="row">
+				<a href="mailto:genesisbarriosdev@gmail.com" class="view-button"> Request Code</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="projects d-flex two">
+		<div class="project justify-content-center align-self-center">
+			<img src="https://cdn.pixabay.com/photo/2014/03/07/09/43/robot-281880__340.jpg" alt="Two Player Web Hangman"/>
+			<h2>Two Player Hangman</h2>
+			<p class="serif date"> March, 2017 </p>
+			<p class="serif"> As my TADHack Mini Orlando 2017 project submission I created a two-player web hangman game with an integrated audio call using the Temasys WebRTC APIs and Javascript. </p>
+			<div class="row">
+				<a href="https://github.com/bennypaulino/peer-to-peer-hangman" target="_blank" class="view-button">View Project</a>
+			</div>
+		</div>
+	</section>
+	<footer class="page-footer font-small">
+		<div class="footer-copyright text-center py-3">© Copyright 2018. Designed and Developed by Genesis Barrios</div>
+	</footer>
+</body>
+</html>
