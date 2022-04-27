@@ -267,7 +267,7 @@ footer{
     }
 
     .project p{
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
 
     .about-cont h2{
@@ -279,7 +279,7 @@ footer{
     }
 
     .about-cont p{
-        font-size: 0.7em;
+        font-size:  0.8em!important;
     }
 
     .project img{
@@ -302,7 +302,37 @@ footer{
     }
     
     .about-cont{
-        font-size:0.75em;
+        font-size:0.95em;
         margin-top:15%;
     } 
+}
+
+@media only screen and (max-width: 600px) {
+    .project p{
+        font-size: 0.8em;
+    }
+
+    .about-cont h2{
+        font-size: 0.9em; 
+    }
+
+    .about-cont h2{
+        font-size: 0.9em; 
+    }
+
+    .about-cont p{
+        font-size: 0.9em;
+    }
+
+    .about-cont{
+        font-size:0.90em;
+        margin-top:15%;
+    } 
+
+    #about{
+        height:60%;
+        width:80%;
+        margin-top: -160%;
+        margin-left: 10%;
+    }
 }
