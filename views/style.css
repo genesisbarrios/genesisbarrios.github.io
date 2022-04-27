@@ -251,7 +251,6 @@ footer{
         width:80%;
         margin-top: -73%;
         margin-left: 10%;
-        font-size: 0.8em;
     }
 }
 
@@ -278,10 +277,6 @@ footer{
         font-size: 1.0em; 
     }
 
-    .about-cont p{
-        font-size:  0.8em!important;
-    }
-
     .project img{
         height: 40%;
     }
@@ -302,7 +297,6 @@ footer{
     }
     
     .about-cont{
-        font-size:0.95em;
         margin-top:15%;
     } 
 }
@@ -321,11 +315,10 @@ footer{
     }
 
     .about-cont p{
-        font-size: 0.9em;
+        font-size: 0.85em;
     }
 
     .about-cont{
-        font-size:0.90em;
         margin-top:15%;
     } 
 
@@ -333,6 +326,6 @@ footer{
         height:60%;
         width:80%;
         margin-top: -160%;
-        margin-left: 10%;
+        margin-left: 5%;
     }
 }
