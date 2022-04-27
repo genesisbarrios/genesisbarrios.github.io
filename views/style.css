@@ -285,8 +285,8 @@ footer{
         height:60%;
         width:80%;
         margin-top: -155%;
-        margin-left: 7%;
-        font-size: 0.85em;
+        margin-left: 3%;
+        font-size: 0.80em;
     }
     
     .face, .about-cont{
@@ -321,10 +321,10 @@ footer{
     } 
 
     #about{
-        font-size: 0.8em;
+        font-size: 0.75em;
         height:60%;
         width:80%;
         margin-top: -160%;
-        margin-left: 5%;
+        margin-left: 2%;
     }
 }
