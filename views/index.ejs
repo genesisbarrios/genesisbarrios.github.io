@@ -73,8 +73,8 @@
 
 				particlesMesh.rotation.y = -.1 * elapsedTime;
 				if(mouseX > 0){
-					particlesMesh.rotation.y = mouseX * (elapsedTime * 0.0008) 
-					particlesMesh.rotation.x = mouseY * (elapsedTime * 0.0008) 
+					particlesMesh.rotation.y = mouseX * (elapsedTime * 0.0005) 
+					particlesMesh.rotation.x = mouseY * (elapsedTime * 0.0005) 
 				}
 
 				renderer.render(scene, camera);
@@ -85,7 +85,7 @@
 
 			var i =0;
 			var aboutText = " cd genesisbarrios/About\r\ngenesisbarrios:~$ cat about.txt \r\n";
-			var aboutText2 = "\r\nHello! My name is Genesis Barrios.\r\nI'm a Software Engineer based in Miami, Florida. 🌴 \r\nI got my Bachelor's of Science in Computer Science in Spring of 2020 from Florida International University.\r\nSome of my topics of study include: C Programming, Java Programming, Data Structures, Discrete Structures,\r\nComputer Architecture, Database Management, Net Centric Computing, Software Engineering,\r\nMobile Application Development, and Programming Languages. \r\nI am currently working as an Associate Software Engineer where I build and support applications in the Azure cloud.\r\nI have experience with various technologies including Javascript, JQuery, Bootstrap, HTML, CSS, Angular, React,\r\n Node.js, MongoDB, SQL, MySQL, MicrosoftSQL, Java, Tomcat, C#, .NET, Azure Cloud,\r\nSwift, Web GL(Babylon.js, Three.js), Web3.js, Solidity, and Python.";
+			var aboutText2 = "\r\nHello! My name is Genesis Barrios.\r\nI'm a Software Engineer based in Miami, Florida. 🌴 \r\nI got my Bachelor's of Science in Computer Science in Spring of 2020 from Florida International University.\r\nI am currently working as an Associate Software Engineer where I build and support applications in the Azure cloud.\r\nI'm a Full Stack Engineer having worked with various technologies including Javascript, JQuery, Angular, React,\r\n Node.js, MongoDB, Firebase, SQL, MySQL, MicrosoftSQL, Tomcat, Java, C#, .NET, Swift, Web GL(Babylon.js, Three.js), and Python. I'm\r\n currently dedicating my free time to learning and building with Web3 technologies like Soldiity and Web3.js. I love building creative solutions\r\n for myself and others, and I offer support through <a href='www.enigmasoftwareconsulting.com' style='color:white; font-weight:bold;' target='_blank'>Enigma Software Consulting.</a>";
 			var speed = 50;
 
 			function typeWriter(){
@@ -107,7 +107,7 @@
 		<canvas class="webgl">
 		</canvas>
 		<div class="about">
-			<div class="container-fluid row"style="height:15%;"></div>
+			<div class="container-fluid row" style="height:15%;"></div>
 			<div class="row" id="about">
 				<div class="fill col-10" style="margin-bottom:8%;">
 					<div class="row align-items-center" style="margin-bottom:7%;">
@@ -135,14 +135,18 @@
 			<div class="container-fluid row" style="height:15%;"></div>
 			
 		</div>
+
+
+	<h1 id="projectsTitle">Projects</h1>
 	</div>
 	
+
 	<section class="projects d-flex one">
 		<div class="project justify-content-center align-self-center">
 			<img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/002/018/361/datas/medium.png" alt="Alphabet Spaces"/>
 			<h2>Alphabet Spaces</h2>
 			<p class="serif" style="margin-bottom:2px;"> Jun 2022 </p>
-			<p class="serif" style="font-size:0.8em; margin-bottom:2px;">For <a href="https://pridehacksii.devpost.com/">MLH Pride Hacks 2</a>, I built a decentralized social media platform for LGBTQ+ people to find Safe Spaces and meet other people in the community. Users and followers functionality is handled by DeSo, Spaces are handled in firebase, and the front-end is React. Won the Prize for Best Use of <a href="https://www.deso.org/">DeSo.</a></p>
+			<p class="serif content" style="font-size:0.8em; margin-bottom:2px;">For <a href="https://pridehacksii.devpost.com/">MLH Pride Hacks 2</a>, I built a decentralized social media platform for LGBTQ+ people to find Safe Spaces and meet other people in the community. Users and followers functionality is handled by DeSo, Spaces are handled in firebase, and the front-end is React. Won the Prize for Best Use of <a href="https://www.deso.org/">DeSo.</a></p>
 			<div class="row" style="margin-bottom:5px;">
 				<a href="https://www.alphabetspaces.co" target="_blank" class="view-button"> View Website </a>
 			</div>
@@ -154,7 +158,7 @@
 			<img src="https://drive.google.com/uc?export=view&id=1zyNQEfFu1Ya7y_Nh5_SCX32Uk8RuFNSE" alt="Refound"/>
 			<h2>Refound</h2>
 			<p class="serif" style="margin-bottom:2px;"> May 2022 </p>
-			<p class="serif" style="font-size:0.8em; margin-bottom:2px;">For Activate x Wormhole 2022, my team and I build an NFT platform for journalists that are struggling to get their content out there and struggling to be compensated. Won the Rebuild for Ukraine Bounty awarded by the NEAR protocol. I worked on the coinbase wallet, donations functionality, and NFT contracts.</p>
+			<p class="serif content" style="font-size:0.8em; margin-bottom:2px;">For Activate x Wormhole 2022, my team and I build an NFT platform for journalists that are struggling to get their content out there and struggling to be compensated. Won the Rebuild for Ukraine Bounty awarded by the NEAR protocol. I worked on the coinbase wallet, donations functionality, and NFT contracts.</p>
 			<div class="row" style="margin-bottom:5px;">
 				<a href="https://www.refound.app" target="_blank" class="view-button"> View Website </a>
 			</div>
@@ -166,7 +170,7 @@
 			<img src="https://drive.google.com/uc?export=view&id=1ncdC6AD3K69cJ95UwmEllxkfWqjdbA2r" alt="Enigma Software Consulting"/>
 			<h2>Enigma Software Consulting</h2>
 			<p class="serif" style="margin-bottom:2px;"> February 2022 </p>
-			<p class="serif" style="font-size:0.8em; margin-bottom:2px;"> I launched my software consulting business along with a website built with React and Three.js, and with a blog that is supported by a Firebase database.</p>
+			<p class="serif content" style="font-size:0.8em; margin-bottom:2px;"> I launched my software consulting business along with a website built with React and Three.js, and with a blog that is supported by a Firebase database.</p>
 			<div class="row" style="margin-bottom:5px;">
 				<a href="https://www.enigmasoftwareconsulting.com" target="_blank" class="view-button"> View Website </a>
 			</div>
@@ -178,7 +182,7 @@
 			<img src="https://drive.google.com/uc?export=view&id=175P-QLU4Y6-HuvpkNI_VdIAKnt45BqdQ" alt="EnigmaLabelDAO - Ethereum Dapp to join a Record Label DAO."/>
 			<h2>SPOTx</h2>
 			<p class="serif" style="margin-bottom:2px;"> January 2022 </p>
-			<p class="serif" style="font-size:0.8em; margin-bottom:2px;"> A Solana(now Polygon) Dapp that allows busineses to create NFT rewards for their loyalty customers. Created as the second use case for <a href="shrimpgame.io">ShrimpGame</a>(NFT AR Game) for MiamiHackWeek2022.</p>
+			<p class="serif content" style="font-size:0.8em; margin-bottom:2px;"> A Solana(now Polygon) Dapp that allows busineses to create NFT rewards for their loyalty customers. Created as the second use case for <a href="shrimpgame.io">ShrimpGame</a>(NFT AR Game) for MiamiHackWeek2022.</p>
 			<div class="row" style="margin-bottom:5px;">
 				<a href="https://61ff798d32ca040007e26201--epic-panini-5f7186.netlify.app/" target="_blank" class="view-button"> View Project </a>
 			</div>
@@ -193,7 +197,7 @@
 			<img src="https://drive.google.com/uc?export=view&id=1tjnTFJoL70ciFpZogTwcY9Fs9Om9-1oe" alt="EnigmaLabelDAO - Ethereum Dapp to join a Record Label DAO."/>
 			<h2>EnigmaLabelDao</h2>
 			<p class="serif" style="margin-bottom:2px;"> January 2022 </p>
-			<p class="serif" style="font-size:0.8em; margin-bottom:2px;"> An Ethereum(Rinkeby) Dapp to join a Record Label DAO(Decentralized Autonomous Organization). Built with React, and 3rdweb. Based on the Build your own DAO with just Javascript Course by <a href="buildspace.so">Buildspace</a>. Blockchain Comptwonts: ERC-1155 NFT, custom ERC-20 token($ENIGMA), Governance Contract.</p>
+			<p class="serif content" style="font-size:0.8em; margin-bottom:2px;"> An Ethereum(Rinkeby) Dapp to join a Record Label DAO(Decentralized Autonomous Organization). Built with React, and 3rdweb. Based on the Build your own DAO with just Javascript Course by <a href="buildspace.so">Buildspace</a>. Blockchain Comptwonts: ERC-1155 NFT, custom ERC-20 token($ENIGMA), Governance Contract.</p>
 			<div class="row" style="margin-bottom:5px;">
 				<a href="https://RecordLabel-DAO.genesisbarrios1.repl.co" target="_blank" class="view-button"> View Project </a>
 			</div>
@@ -206,7 +210,7 @@
 			<img src="https://drive.google.com/uc?export=view&id=1RjL792msNHOXeXJWl5mbnGj8swOcEzW_" alt="LyricPortal - Ethereum Dapp for sharing lyrics"/>
 			<h2>LyricPortal</h2>
 			<p class="serif" style="margin-bottom:2px;"> January 2022 </p>
-			<p class="serif" style="font-size:0.8em; margin-bottom:2px;"> An Ethereum(Rinkeby) Dapp for sharing lyrics based on the Solidity + Ethereum Smart Contracts Course by <a href="buildspace.so">Buildspace</a>. Built with React.js, Solidity, and Replit for hosting on the Rinkeby testnet. If my testing goes well I will deploy to mainnet for everytwo to use and obtain real ETH.</p>
+			<p class="serif content" style="font-size:0.8em; margin-bottom:2px;"> An Ethereum(Rinkeby) Dapp for sharing lyrics based on the Solidity + Ethereum Smart Contracts Course by <a href="buildspace.so">Buildspace</a>. Built with React.js, Solidity, and Replit for hosting on the Rinkeby testnet. If my testing goes well I will deploy to mainnet for everytwo to use and obtain real ETH.</p>
 			<div class="row" style="margin-bottom:5px;">
 				<a href="https://LyricPortal.genesisbarrios1.repl.co" target="_blank" class="view-button"> View Project </a>
 			</div>
@@ -218,7 +222,7 @@
 			<img src="https://drive.google.com/uc?id=1OO0ay-fy6IThnEkeMCp7fQ17NniygSlG" alt="MetaShop - 3D VR Web Shop"/>
 			<h2>MetaShop</h2>
 			<p class="serif" style="margin-bottom:2px;"> December 2021 </p>
-			<p class="serif" style="font-size:0.8em; margin-bottom:2px;"> A 3D interactive web store that allows users to interact with items, chat with other users, and request help from the Avaya Webchat agent. This project won 3rd place in the TadHack-Mini Orlando Hackathon at Avaya ENGAGE 2021. Future plans include perfecting the physics and GUI, updating character models in all client views so users can be in the same store together, and either setting it up as an ecommerce platform or setting it up as an NFT store on Etherum.</p>
+			<p class="serif content" style="font-size:0.8em; margin-bottom:2px;"> A 3D interactive web store that allows users to interact with items, chat with other users, and request help from the Avaya Webchat agent. This project won 3rd place in the TadHack-Mini Orlando Hackathon at Avaya ENGAGE 2021. Future plans include perfecting the physics and GUI, updating character models in all client views so users can be in the same store together, and either setting it up as an ecommerce platform or setting it up as an NFT store on Etherum.</p>
 			<div class="row" style="margin-bottom:5px;">
 				<a href="https://github.com/genesisbarrios/metashop" target="_blank" class="view-button"> View Project </a>
 			</div>
@@ -233,7 +237,7 @@
 			<img src="https://drive.google.com/uc?id=1ffpL3s2ejJaFSjNRW23g0moWkCbpcWJT" alt="Wavy Pads Web Synth"/>
 			<h2>Wavy Pads</h2>
 			<p class="serif"> March 2021 </p>
-			<p class="serif"> A Web Based Synth with EQ, Gain, Decay, Reverb, Octave, and Key Inputs. Built with Ttwo.js.</p>
+			<p class="serif content"> A Web Based Synth with EQ, Gain, Decay, Reverb, Octave, and Key Inputs. Built with Three.js.</p>
 			<div class="row">
 				<a href="https://github.com/genesisbarrios/wavypads" target="_blank" class="view-button"> View Project </a>
 			</div>
@@ -245,7 +249,7 @@
 			<img src="https://drive.google.com/uc?id=1AQCVEyUjSCshzLvIyqwEMuYjEUTwa8MF"/>
 			<h2>VirtualRollCall</h2>
 			<p class="serif"> April, 2020 </p>
-			<p class="serif">For my Senior Project my teammate and I recreated the documentation and attendance application for the Pinecrest police department. Built with Angular, and Node.js.</p>
+			<p class="serif content">For my Senior Project my teammate and I recreated the documentation and attendance application for the Pinecrest police department. Built with Angular, and Node.js.</p>
 			<div class="row">
 				<a href="https://github.com/genesisbarrios/VirtualRollCallSpring2020" target="_blank" class="view-button"> View Project</a>
 			</div>
@@ -257,22 +261,9 @@
 			<img src="https://drive.google.com/uc?id=1kHyPPxqmGHWePdPgrhfEkBP2hxI0s90b"/>
 			<h2>YouTube Multiple Comment App</h2>
 			<p class="serif"> January, 2020 </p>
-			<p class="serif">I posted a YouTube video of me singing a song I made for a competition, and I received a lot of comments asking if I could put the song on spotify. I wanted to reply to all of those comments at once, so I made an application to do that for me. I built it with the YouTube API, and Javascript.</p>
+			<p class="serif content">I posted a YouTube video of me singing a song I made for a competition, and I received a lot of comments asking if I could put the song on spotify. I wanted to reply to all of those comments at once, so I made an application to do that for me. I built it with the YouTube API, and Javascript.</p>
 			<div class="row">
 				<a href="https://github.com/genesisbarrios/YouTubeMultipleCommentApp" target="_blank" class="view-button"> View Project</a>
-			</div>
-		</div>
-	</section>
-
-
-	<section class="projects d-flex one">
-		<div class="project justify-content-center align-self-center">
-			<img src="https://drive.google.com/uc?id=1zGuAKQCd1hMInSFJlgaPIqz_PqfUs41K" alt="Patatap Cltwo"/>
-			<h2>Shapes and Sounds - a Patatap clone</h2>
-			<p class="serif"> May, 2018 </p>
-			<p class="serif">I built a patatap.com cltwo using paper.js, howler.js, and sounds from a new song I've been working on.</p>
-			<div class="row">
-				<a href="https://github.com/genesisbarrios/shapesnsounds" target="_blank" class="view-button"> View Project</a>
 			</div>
 		</div>
 	</section>

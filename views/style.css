@@ -14,7 +14,7 @@
 body{
     
     font-family: 'Bebas Neue', cursive;
-    background: var(--grey);
+    background: #02111B;
 }
 
 .bg{
@@ -22,6 +22,7 @@ body{
     margin:0;
     padding:0;
     height:100vh;
+    margin-bottom:5%;
 }
 
 .webgl{
@@ -41,9 +42,9 @@ body{
     box-shadow: 1px 1px 5px green;
 }
 #about{
-    height:60%;
+    height:50%;
     width:80%;
-    margin-top: -50%;
+    margin-top: -45%;
     margin-left: 10%;
 }
 
@@ -60,7 +61,7 @@ body{
     font-size:0.9em;
     color:green;
     margin: 0 auto;
-    margin-top:10%;
+    margin-top:5%;
 } 
 
 #aboutText2{
@@ -164,6 +165,7 @@ body{
 .project img{
     width: 100%;
     height: 50%;
+    border-radius: 15px;
 }
 
 .serif{
@@ -175,8 +177,8 @@ body{
 }
 
 footer{
-    background-color: var(--main-bg-color);
-    color: var(--second-bg-color);
+    background-color:black;
+    color: white;
     font-weight: 200;
     font-size: 0.8em;
 }
@@ -185,8 +187,22 @@ footer{
     margin-top:5px;
 }
 
+#projectsTitle{
+    text-align:center;
+    margin-top: 5%;
+    color:white;
+}
+
 .view-button{
     text-align:center;
+}
+
+a{
+    color: var(--green1);
+}
+
+a:hover{
+    color: var(--green2);
 }
 
 .one{
@@ -194,35 +210,30 @@ footer{
     color: white;
 }
 
-.one .project .row a{
-    color: var(--green1);
+.one .project .row a, .two .project .row a{
+    background-color: var(--green1);
+    color:white;
     border: 2px solid var(--green1);
     border-radius:10px;
+    padding:5px 10px;
+    margin-top:5px;
 }
 
-.two .project .row a{
-    color: var(--green1);
-    border: 2px solid var(--green1);
-    border-radius:10px;
-}
-
-.one .project .row a:hover{
-    color: var(--green2);
+.one .project .row a:hover , .two .project .row :hover{
+    background-color: var(--green2);
+    color:lightgrey;
     border: 2px solid var(--green2);
-    border-radius:10px;
-}
-
-.two .project .row a:hover{
-    color: var(--green2);
-    border: 2px solid var(--green2);
-    border-radius:10px;
 }
 
 .two{
-    background-color: var(--second-bg-color);
+    background-color: var(--main-bg-color);
     color:white;
 }
 
+.content{
+    width:50%;
+    margin: 0 auto;
+}
 
 @media only screen and (max-width: 1440px) {
 
