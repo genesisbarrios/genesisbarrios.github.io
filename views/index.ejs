@@ -18,21 +18,21 @@
 <body>
 	
 	<script type="module">
-		import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r115/build/three.module.js';
+		import * as two from 'https://twojsfundamentals.org/twojs/resources/twojs/r115/build/two.module.js';
 		window.onload = function() {
 
 			// Canvas
 			const canvas = document.querySelector('canvas.webgl');
 
-			let scene, camera, renderer, particlesThree, star, stars, particlesCount;
+			let scene, camera, renderer, particlestwo, star, stars, particlesCount;
 			let particlesMesh;
 
-			scene = new THREE.Scene();
-			camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
+			scene = new two.Scene();
+			camera = new two.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
 			camera.position.z = 1;
 			camera.rotation.x = Math.PI/2;
 
-			renderer = new THREE.WebGLRenderer({  
+			renderer = new two.WebGLRenderer({  
 				canvas: canvas,
 				alpha: true 
 			});
@@ -40,10 +40,10 @@
 			renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 			//canvas.appendChild(renderer.domElement);
 
-			const material = new THREE.MeshBasicMaterial()
-			material.color = new THREE.Color(0xffffff)
+			const material = new two.MeshBasicMaterial()
+			material.color = new two.Color(0xffffff)
 
-			const particlesGeo = new THREE.BufferGeometry();
+			const particlesGeo = new two.BufferGeometry();
 			particlesCount = 10000;
 			const posArray = new Float32Array(particlesCount * 3);
 
@@ -51,9 +51,9 @@
 				posArray[i] = (Math.random() - 0.5) * 5;
 			}
 
-			particlesGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3))
+			particlesGeo.setAttribute('position', new two.BufferAttribute(posArray, 3))
 
-			particlesMesh = new THREE.Points(particlesGeo, material)
+			particlesMesh = new two.Points(particlesGeo, material)
 			scene.add(particlesMesh);
 
 			document.addEventListener('mouseover', animateParticles);
@@ -66,7 +66,7 @@
 				mouseX = event.clientX;
 			}
 
-			const clock = new THREE.Clock();
+			const clock = new two.Clock();
 
 			const tick = () => {
 				const elapsedTime = clock.getElapsedTime()
@@ -85,7 +85,7 @@
 
 			var i =0;
 			var aboutText = " cd genesisbarrios/About\r\ngenesisbarrios:~$ cat about.txt \r\n";
-			var aboutText2 = "\r\nHello! My name is Genesis Barrios.\r\nI'm a Software Engineer based in Miami, Florida. 🌴 \r\nI got my Bachelor's of Science in Computer Science in Spring of 2020 from Florida International University.\r\nI am currently working as an Associate Software Engineer where I build and support applications in the Azure cloud.\r\nI'm a Full Stack Engineer having worked with various technologies including Javascript, JQuery, Angular, React,\r\n Node.js, MongoDB, Firebase, SQL, MySQL, MicrosoftSQL, Tomcat, Java, C#, .NET, Swift, Web GL(Babylon.js, Three.js), and Python. I'm\r\n currently dedicating my free time to learning and building with Web3 technologies like Soldiity and Web3.js. I love building creative solutions\r\n for myself and others, and I offer support through <a href='https://www.enigmasoftwareconsulting.com' style='color:white; font-weight:bold;' target='_blank'>Enigma Software Consulting.</a>";
+			var aboutText2 = "\r\nHello! My name is Genesis Barrios.\r\nI'm a Software Engineer based in Miami, Florida. 🌴 \r\nI got my Bachelor's of Science in Computer Science in Spring of 2020 from Florida International University.\r\nI am currently working as an Associate Software Engineer where I build and support applications in the Azure cloud.\r\nI'm a Full Stack Engineer having worked with various technologies including Javascript, JQuery, Angular, React,\r\n Node.js, MongoDB, Firebase, SQL, MySQL, MicrosoftSQL, Tomcat, Java, C#, .NET, Swift, Web GL(Babylon.js, two.js), and Python. I'm\r\n currently dedicating my free time to learning and building with Web3 technologies like Soldiity and Web3.js. I love building creative solutions\r\n for myself and others, and I offer support through <a href='https://www.enigmasoftwareconsulting.com' style='color:white; font-weight:bold;' target='_blank'>Enigma Software Consulting.</a>";
 			var speed = 50;
 
 			function typeWriter(){
@@ -153,7 +153,7 @@
 		</div>
 	</section>
 
-	<section class="projects d-flex one">
+	<section class="projects d-flex two">
 		<div class="project justify-content-center align-self-center">
 			<img src="https://drive.google.com/uc?export=view&id=1hJ9qaBb1zg4z6zPIjmXdGux3a9yBqu18" alt="Refound"/>
 			<h2>Refound</h2>
@@ -169,7 +169,7 @@
 		</div>
 	</section>
 
-	<section class="projects d-flex two">
+	<section class="projects d-flex one">
 		<div class="project justify-content-center align-self-center">
 			<img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/002/018/361/datas/medium.png" alt="Alphabet Spaces"/>
 			<h2>Alphabet Spaces</h2>
@@ -181,19 +181,19 @@
 		</div>
 	</section>
 
-	<section class="projects d-flex one">
+	<section class="projects d-flex two">
 		<div class="project justify-content-center align-self-center">
 			<img src="https://drive.google.com/uc?export=view&id=1ncdC6AD3K69cJ95UwmEllxkfWqjdbA2r" alt="Enigma Software Consulting"/>
 			<h2>Enigma Software Consulting</h2>
 			<p class="serif" style="margin-bottom:2px;"> February 2022 </p>
-			<p class="serif content" style="font-size:0.8em; margin-bottom:2px;"> I launched my software consulting business along with a website built with React and Three.js, and with a blog that is supported by a Firebase database.</p>
+			<p class="serif content" style="font-size:0.8em; margin-bottom:2px;"> I launched my software consulting business along with a website built with React and two.js, and with a blog that is supported by a Firebase database.</p>
 			<div class="row" style="margin-bottom:5px;">
 				<a href="https://www.enigmasoftwareconsulting.com" target="_blank" class="view-button"> View Website </a>
 			</div>
 		</div>
 	</section>
 	
-	<section class="projects d-flex two">
+	<section class="projects d-flex one">
 		<div class="project justify-content-center align-self-center">
 			<img src="https://drive.google.com/uc?export=view&id=175P-QLU4Y6-HuvpkNI_VdIAKnt45BqdQ" alt="EnigmaLabelDAO - Ethereum Dapp to join a Record Label DAO."/>
 			<h2>SPOTx</h2>
@@ -208,32 +208,32 @@
 		</div>
 	</section>
 
-	<section class="projects d-flex one">
+	<section class="projects d-flex two">
 		<div class="project justify-content-center align-self-center">
 			<img src="https://drive.google.com/uc?export=view&id=1tjnTFJoL70ciFpZogTwcY9Fs9Om9-1oe" alt="EnigmaLabelDAO - Ethereum Dapp to join a Record Label DAO."/>
 			<h2>EnigmaLabelDao</h2>
 			<p class="serif" style="margin-bottom:2px;"> January 2022 </p>
-			<p class="serif content" style="font-size:0.8em; margin-bottom:2px;"> An Ethereum(Rinkeby) Dapp to join a Record Label DAO(Decentralized Autonomous Organization). Built with React, and 3rdweb. Based on the Build your own DAO with just Javascript Course by <a href="buildspace.so">Buildspace</a>. Blockchain Comptwonts: ERC-1155 NFT, custom ERC-20 token($ENIGMA), Governance Contract.</p>
+			<p class="serif content" style="font-size:0.8em; margin-bottom:2px;"> An Ethereum(Rinkeby) Dapp to join a Record Label DAO(Decentralized Autonomous Organization). Built with React, and 3rdweb. Based on the Build your own DAO with just Javascript Course by <a href="buildspace.so">Buildspace</a>. Blockchain Components: ERC-1155 NFT, custom ERC-20 token($ENIGMA), Governance Contract.</p>
 			<div class="row" style="margin-bottom:5px;">
 				<a href="https://RecordLabel-DAO.genesisbarrios1.repl.co" target="_blank" class="view-button"> View Project </a>
 			</div>
 		</div>
 	</section>
 
-	<section class="projects d-flex two">
+	<section class="projects d-flex one">
 		<div class="project justify-content-center align-self-center">
 			
 			<img src="https://drive.google.com/uc?export=view&id=1RjL792msNHOXeXJWl5mbnGj8swOcEzW_" alt="LyricPortal - Ethereum Dapp for sharing lyrics"/>
 			<h2>LyricPortal</h2>
 			<p class="serif" style="margin-bottom:2px;"> January 2022 </p>
-			<p class="serif content" style="font-size:0.8em; margin-bottom:2px;"> An Ethereum(Rinkeby) Dapp for sharing lyrics based on the Solidity + Ethereum Smart Contracts Course by <a href="buildspace.so">Buildspace</a>. Built with React.js, Solidity, and Replit for hosting on the Rinkeby testnet. If my testing goes well I will deploy to mainnet for everytwo to use and obtain real ETH.</p>
+			<p class="serif content" style="font-size:0.8em; margin-bottom:2px;"> An Ethereum(Rinkeby) Dapp for sharing lyrics based on the Solidity + Ethereum Smart Contracts Course by <a href="buildspace.so">Buildspace</a>. Built with React.js, Solidity, and Replit for hosting on the Rinkeby testnet. If my testing goes well I will deploy to mainnet for everyone to use and obtain real ETH.</p>
 			<div class="row" style="margin-bottom:5px;">
 				<a href="https://LyricPortal.genesisbarrios1.repl.co" target="_blank" class="view-button"> View Project </a>
 			</div>
 		</div>
 	</section>
 
-	<section class="projects d-flex one">
+	<section class="projects d-flex two">
 		<div class="project justify-content-center align-self-center">
 			<img src="https://drive.google.com/uc?id=1OO0ay-fy6IThnEkeMCp7fQ17NniygSlG" alt="MetaShop - 3D VR Web Shop"/>
 			<h2>MetaShop</h2>
@@ -248,19 +248,19 @@
 		</div>
 	</section>
 
-	<section class="projects d-flex two">
+	<section class="projects d-flex one">
 		<div class="project justify-content-center align-self-center">
 			<img src="https://drive.google.com/uc?id=1ffpL3s2ejJaFSjNRW23g0moWkCbpcWJT" alt="Wavy Pads Web Synth"/>
 			<h2>Wavy Pads</h2>
 			<p class="serif"> March 2021 </p>
-			<p class="serif content"> A Web Based Synth with EQ, Gain, Decay, Reverb, Octave, and Key Inputs. Built with Three.js.</p>
+			<p class="serif content"> A Web Based Synth with EQ, Gain, Decay, Reverb, Octave, and Key Inputs. Built with two.js.</p>
 			<div class="row">
 				<a href="https://github.com/genesisbarrios/wavypads" target="_blank" class="view-button"> View Project </a>
 			</div>
 		</div>
 	</section>
 	
-	<section class="projects d-flex one">
+	<section class="projects d-flex two">
 		<div class="project justify-content-center align-self-center">
 			<img src="https://drive.google.com/uc?id=1AQCVEyUjSCshzLvIyqwEMuYjEUTwa8MF"/>
 			<h2>VirtualRollCall</h2>
@@ -272,7 +272,7 @@
 		</div>
 	</section>
 
-	<section class="projects d-flex two">
+	<section class="projects d-flex one">
 		<div class="project justify-content-center align-self-center">
 			<img src="https://drive.google.com/uc?id=1kHyPPxqmGHWePdPgrhfEkBP2hxI0s90b"/>
 			<h2>YouTube Multiple Comment App</h2>
