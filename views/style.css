@@ -65,8 +65,9 @@ body{
 } 
 
 #aboutText2{
-    color:white;
+    color:rgb(211, 210, 210);
 }
+
 .space{
     margin-top:50px;
 }
@@ -75,12 +76,16 @@ body{
     margin-bottom: 0;
 }
 
+.white{
+    color:rgb(211, 210, 210);
+}
+
 .sidebar{
     background: var(--main-bg-color);
     width:50px;
     position:fixed;
     right:0;
-    top:25%;
+    top:37%;
     border-top-left-radius:15px;
     border-bottom-left-radius:15px;
 
@@ -273,7 +278,7 @@ a:hover{
 
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 800px) {
     #projLink{
         width:15%;
         font-size:0.6em;
@@ -301,9 +306,8 @@ a:hover{
     }
 
     #about{
-        height:60%;
         width:80%;
-        margin-top: -155%;
+        margin-top: -105%;
         margin-left: 10%;
         font-size: 0.75em;
     }

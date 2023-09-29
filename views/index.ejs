@@ -19,15 +19,22 @@
 	
 	<script type="module">
 		import * as two from 'https://twojsfundamentals.org/twojs/resources/twojs/r115/build/two.module.js';
-		window.onload = function() {
+		
+		
 
+		window.onload = function() {
+			var two = new Two({
+				fullscreen: true,
+				autostart: false
+			  })
+			  
 			// Canvas
 			const canvas = document.querySelector('canvas.webgl');
 
 			let scene, camera, renderer, particlestwo, star, stars, particlesCount;
 			let particlesMesh;
 
-			scene = new two.Scene();
+			scene = new two.scene();
 			camera = new two.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
 			camera.position.z = 1;
 			camera.rotation.x = Math.PI/2;
@@ -85,10 +92,11 @@
 
 			var i =0;
 			var aboutText = " cd genesisbarrios/About\r\ngenesisbarrios:~$ cat about.txt \r\n";
-			var aboutText2 = "\r\nHello! My name is Genesis Barrios.\r\nI'm a Software Engineer based in Miami, Florida. 🌴 \r\nI got my Bachelor's of Science in Computer Science in Spring of 2020 from Florida International University.\r\nI am currently working as an Associate Software Engineer where I build and support applications in the Azure cloud.\r\nI'm a Full Stack Engineer having worked with various technologies including Javascript, JQuery, Angular, React,\r\n Node.js, MongoDB, Firebase, SQL, MySQL, MicrosoftSQL, Tomcat, Java, C#, .NET, Swift, Web GL(Babylon.js, two.js), and Python. I'm\r\n currently dedicating my free time to learning and building with Web3 technologies like Soldiity and Web3.js. I love building creative solutions\r\n for myself and others, and I offer support through <a href='https://www.enigmasoftwareconsulting.com' style='color:white; font-weight:bold;' target='_blank'>Enigma Software Consulting.</a>";
+			var aboutText2 = "\r\nHello! My name is Genesis Barrios.\r\nI'm a Software Engineer based in Miami, Florida. 🌴 \r\nI got my Bachelor's of Science in Computer Science in Spring of 2020 from Florida International University.\r\nI am currently working as an Associate Software Engineer where I build and support applications in the Azure cloud.\r\nI'm a Full Stack Engineer having worked with various technologies including Javascript, JQuery, Angular, React,\r\n Node.js, MongoDB, Firebase, SQL, MySQL, MicrosoftSQL, Tomcat, Java, C#, .NET, Swift, Web GL(Babylon.js, two.js), and Python. I'm\r\n currently dedicating my free time to learning and building with Web3 technologies like Soldiity and Web3.js. I love building creative solutions for myself and others, and I offer support through <a href='https://www.enigmasoftwareconsulting.com' style='color:white; font-weight:bold;' target='_blank'>Enigma Software Consulting.</a>";
 			var speed = 50;
 
 			function typeWriter(){
+				console.log('typewriter');
 				document.getElementById("aboutText").setAttribute("style", "white-space: pre;")
 				if(i < aboutText.length){
 					document.getElementById("aboutText").innerHTML += aboutText.charAt(i);
@@ -107,8 +115,8 @@
 		<canvas class="webgl">
 		</canvas>
 		<div class="about">
-			<div class="container-fluid row" style="height:15%;"></div>
-			<div class="row" id="about">
+			<div class="container-fluid row" ></div>
+			<div class="row" id="about" style=" height: auto; overflow: hidden;">
 				<div class="fill col-10" style="margin-bottom:8%;">
 					<div class="row align-items-center" style="margin-bottom:7%;">
 						<div class="col-1">
@@ -116,14 +124,13 @@
 						<div class="col-10">
 							<div class="about-cont" >
 								<p class="bottom-margin" id="aboutText">genesisbarrios:~$ cd genesisbarrios/About </p>
-								<p class="bottom-margin" id="aboutTextcont">genesisbarrios:~$ cat about.txt</p>
+								<br>
 								<p class="bottom-margin" id="aboutText2">Hello! My name is Genesis Barrios. I'm a Software Engineer based in Miami, Florida. 🌴 </p>
-								<p class="bottom-margin">I got my Bachelor's of Science in Computer Science in Spring of 2020 from Florida International University.</p>
-								<p class="bottom-margin">I am currently working as an Associate Software Engineer where I build and support applications in the Azure cloud.</p>
-								<p class="bottom-margin">I'm a Full Stack Engineer having worked with various technologies including Javascript, JQuery, Angular, React,</p>
-								<p class="bottom-margin"> Node.js, MongoDB, Firebase, SQL, MySQL, MicrosoftSQL, Tomcat, Java, C#, .NET, Swift, Web GL(Babylon.js, two.js), and Python.</p>
-								<p class="bottom-margin">I'm currently dedicating my free time to learning and building with Web3 technologies like Soldiity and Web3.js. I love building creative solutions</p>
-								<p class="bottom-margin">for myself and others, and I offer support through <a href='https://www.enigmasoftwareconsulting.com' style='color:white; font-weight:bold;' target='_blank'>Enigma Software Consulting.</a></p>
+								<p class="bottom-margin white">I got my Bachelor's of Science in Computer Science in Spring of 2020 from Florida International University.</p>
+								<p class="bottom-margin  white">I am currently working as an Associate Software Engineer where I build and support applications in the Azure cloud.</p>
+								<p class="bottom-margin white">I'm a Full Stack Engineer having worked with various technologies including Javascript, JQuery, Angular, React,</p>
+								<p class="bottom-margin white"> Node.js, MongoDB, Firebase, SQL, MySQL, MicrosoftSQL, Tomcat, Java, C#, .NET, Swift, Web GL(Babylon.js, two.js), and Python.</p>
+								<p class="bottom-margin white">I'm currently dedicating my free time to learning and building with Web3 technologies like Soldiity and Web3.js. I love building creative solutions for myself and others, and I offer support through <a href='https://www.enigmasoftwareconsulting.com' style='font-weight:bold;' target='_blank'>Enigma Software Consulting.</p>
 							</div>
 						</div>
 						<div class="col-1">
