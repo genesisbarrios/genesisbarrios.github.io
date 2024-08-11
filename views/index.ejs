@@ -18,12 +18,12 @@
 <body>
 	
 	<script type="module">
-		import * as two from 'https://twojsfundamentals.org/twojs/resources/twojs/r115/build/two.module.js';
+		import * as one from 'https://onejsfundamentals.org/onejs/resources/onejs/r115/build/one.module.js';
 		
 		
 
 		window.onload = function() {
-			var two = new Two({
+			var one = new one({
 				fullscreen: true,
 				autostart: false
 			  })
@@ -31,15 +31,15 @@
 			// Canvas
 			const canvas = document.querySelector('canvas.webgl');
 
-			let scene, camera, renderer, particlestwo, star, stars, particlesCount;
+			let scene, camera, renderer, particlesone, star, stars, particlesCount;
 			let particlesMesh;
 
-			scene = new two.scene();
-			camera = new two.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
+			scene = new one.scene();
+			camera = new one.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
 			camera.position.z = 1;
 			camera.rotation.x = Math.PI/2;
 
-			renderer = new two.WebGLRenderer({  
+			renderer = new one.WebGLRenderer({  
 				canvas: canvas,
 				alpha: true 
 			});
@@ -47,10 +47,10 @@
 			renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 			//canvas.appendChild(renderer.domElement);
 
-			const material = new two.MeshBasicMaterial()
-			material.color = new two.Color(0xffffff)
+			const material = new one.MeshBasicMaterial()
+			material.color = new one.Color(0xffffff)
 
-			const particlesGeo = new two.BufferGeometry();
+			const particlesGeo = new one.BufferGeometry();
 			particlesCount = 10000;
 			const posArray = new Float32Array(particlesCount * 3);
 
@@ -58,9 +58,9 @@
 				posArray[i] = (Math.random() - 0.5) * 5;
 			}
 
-			particlesGeo.setAttribute('position', new two.BufferAttribute(posArray, 3))
+			particlesGeo.setAttribute('position', new one.BufferAttribute(posArray, 3))
 
-			particlesMesh = new two.Points(particlesGeo, material)
+			particlesMesh = new one.Points(particlesGeo, material)
 			scene.add(particlesMesh);
 
 			document.addEventListener('mouseover', animateParticles);
@@ -73,7 +73,7 @@
 				mouseX = event.clientX;
 			}
 
-			const clock = new two.Clock();
+			const clock = new one.Clock();
 
 			const tick = () => {
 				const elapsedTime = clock.getElapsedTime()
@@ -92,7 +92,7 @@
 
 			var i =0;
 			var aboutText = " cd genesisbarrios/About\r\ngenesisbarrios:~$ cat about.txt \r\n";
-			var aboutText2 = "\r\nHello! My name is Genesis Barrios.\r\nI'm a Software Engineer based in Miami, Florida. 🌴 \r\nI got my Bachelor's of Science in Computer Science in Spring of 2020 from Florida International University.\r\nI am currently working as an Associate Software Engineer where I build and support applications in the Azure cloud.\r\nI'm a Full Stack Engineer having worked with various technologies including Javascript, JQuery, Angular, React,\r\n Node.js, MongoDB, Firebase, SQL, MySQL, MicrosoftSQL, Tomcat, Java, C#, .NET, Swift, Web GL(Babylon.js, two.js), and Python. I'm\r\n currently dedicating my free time to learning and building with Web3 technologies like Soldiity and Web3.js. I love building creative solutions for myself and others, and I offer support through <a href='https://www.enigmasoftwareconsulting.com' style='color:white; font-weight:bold;' target='_blank'>Enigma Software Consulting.</a>";
+			var aboutText2 = "\r\nHello! My name is Genesis Barrios.\r\nI'm a Software Engineer based in Miami, Florida. 🌴 \r\nI got my Bachelor's of Science in Computer Science in Spring of 2020 from Florida International University.\r\nI am currently working as an Associate Software Engineer where I build and support applications in the Azure cloud.\r\nI'm a Full Stack Engineer having worked with various technologies including Javascript, JQuery, Angular, React,\r\n Node.js, MongoDB, Firebase, SQL, MySQL, MicrosoftSQL, Tomcat, Java, C#, .NET, Swift, Web GL(Babylon.js, one.js), and Python. I'm\r\n currently dedicating my free time to learning and building with Web3 technologies like Soldiity and Web3.js. I love building creative solutions for myself and others, and I offer support through <a href='https://www.enigmasoftwareconsulting.com' style='color:white; font-weight:bold;' target='_blank'>Enigma Software Consulting.</a>";
 			var speed = 50;
 
 			function typeWriter(){
@@ -128,7 +128,7 @@
 								<p class="bottom-margin" id="aboutText2">Hello! My name is Genesis Barrios. I'm a Software Engineer based in Miami, Florida. 🌴 </p>
 								<p class="bottom-margin white">I got my Bachelor's of Science in Computer Science in Spring of 2020 from Florida International University.</p>
 								<p class="bottom-margin white">I've been working as a Software Engineer for the past four years at Assurant, where I build and support applications in the Azure cloud.</p>
-								<p class="bottom-margin white">I'm a Full Stack Engineer having worked with various technologies including Javascript, JQuery, Angular, React, Node.js, MongoDB, Firebase, SQL, MySQL, MicrosoftSQL, Tomcat, Java, C#, .NET, and Web GL(Babylon.js, Three.js).</p>
+								<p class="bottom-margin white">I'm a Full Stack Engineer having worked with various technologies including Javascript, JQuery, Angular, React, Node.js, MongoDB, Firebase, SQL, MySQL, MicrosoftSQL, Tomcat, Java, C#, .NET, and Web GL(Babylon.js, one.js).</p>
 								<p class="bottom-margin white">I'm currently dedicating my free time to learning and building with Web3 technologies like Soldiity and Web3.js. I love building creative solutions for myself and others, and I offer support through <a href='https://www.enigma-labs.com' style='font-weight:bold;' target='_blank'>Enigma Labs.</p>
 							</div>
 						</div>
@@ -153,12 +153,14 @@
 	<h1 id="projectsTitle">Projects</h1>
 	</div>
 
+	
+
 	<section class="projects d-flex one">
 		<div class="project justify-content-center align-self-center"> 
 			<img src="https://dl.dropboxusercontent.com/s/tajdsorx5orutffrzm47j/twitter-banner.png?rlkey=x569kx3odu5dbrzdrf6jn7iaw&st=kusyr3s5&dl=0" alt="influanto"/>
 			<h2>Influanto</h2>
 			<p class="serif" style="margin-bottom:2px;"> June 2024 </p>
-			<p class="serif content" style="font-size:0.8em; margin-bottom:2px;"> As a part of Nights & Weekends Season 5 hosted by <a href="https://buildspace.so" target="_blank">Buildspace</a> I have taken the leap and started building one of the ideas I've had for a while which is an all in one marketing tool for musicians and content creators. Built with Next.js.</p>
+			<p class="serif content" style="font-size:0.8em; margin-bottom:2px;"> As a part of Nights & Weekends Season 5 hosted by <a href="https://buildspace.so" target="_blank">Buildspace</a> I have taken the leap and started building two of the ideas I've had for a while which is an all in two marketing tool for musicians and content creators. Built with Next.js.</p>
 			<div class="row" style="margin-bottom:5px;">
 				<a href="https://www.influanto.com" target="_blank" class="view-button"> View Website </a>
 			</div>
@@ -166,18 +168,30 @@
 	</section>
 
 	<section class="projects d-flex two">
+		<div class="project justify-content-center align-self-center"> 
+			<img src="https://dl.dropboxusercontent.com/s/hc1svqnn21ddd4wjjedpk/mars.png?rlkey=034jieiuwha3jtp43i3k7vt4t&st=pca43vll&dl=0" alt="influanto"/>
+			<h2>Mars Miami Studio Website</h2>
+			<p class="serif" style="margin-bottom:2px;">May 2024 </p>
+			<p class="serif content" style="font-size:0.8em; margin-bottom:2px;"> I build a website for Mars Miami Studio, one of Miami's top Recording Studios and I am currently working on integrating Google APIs for Booking functionalities and more!</p>
+			<div class="row" style="margin-bottom:5px;">
+				<a href="https://www.marsmusicstudios.com" target="_blank" class="view-button"> View Website </a>
+			</div>
+		</div>
+	</section>
+
+	<section class="projects d-flex one">
 		<div class="project justify-content-center align-self-center">
-			<img src="https://dl.dropboxusercontent.com/s/9qx08f0n4yg1rt41jbheg/no-rules.png?rlkey=mgdzqkmepnmrw8fxkih22khpd&st=88svn7oc&dl=0" alt="Enigma Software Consulting"/>
+			<img src="https://dl.dropboxusercontent.com/s/qbkbw3fk1ektovl7q10ux/Screenshot-2024-08-11-at-3.39.30-AM.png?rlkey=yht8u9osq5zomxba1vidqvzf1&st=nnzcj4mu&dl=0" alt="Enigma Software Consulting"/>
 			<h2>Enigma Labs</h2>
 			<p class="serif" style="margin-bottom:2px;"> June 2024 </p>
-			<p class="serif content" style="font-size:0.8em; margin-bottom:2px;"> I launched my consulting business along with a website built with React and two.js, and with a blog that is supported by a Firebase database.</p>
+			<p class="serif content" style="font-size:0.8em; margin-bottom:2px;"> I launched my consulting business along with a website built with React and one.js, and with a blog that is supported by a Firebase database.</p>
 			<div class="row" style="margin-bottom:5px;">
 				<a href="https://www.enigma-labs.com" target="_blank" class="view-button"> View Website </a>
 			</div>
 		</div>
 	</section>
 
-	<section class="projects d-flex one">
+	<section class="projects d-flex two">
 		<div class="project justify-content-center align-self-center">
 			<img src="https://dl.dropboxusercontent.com/s/h62cze48hc8jhi6nbvtya/stempo.png?rlkey=wtv3fvqea7btj80b6jia1fjds&dl=0" alt="PanaMia"/>
 			<h2>Stempo</h2>
@@ -190,7 +204,7 @@
 		</div>
 	</section>
 	
-	<section class="projects d-flex two">
+	<section class="projects d-flex one">
 		<div class="project justify-content-center align-self-center">
 			<img src="https://dl.dropboxusercontent.com/s/lvy5auexg1w3udubrevr5/panamia.png?rlkey=p7z5ano1jbljfzy1rpua5zxil&dl=0" alt="PanaMia"/>
 			<h2>Panamia Club</h2>
@@ -203,7 +217,7 @@
 		</div>
 	</section>
 
-	<section class="projects d-flex one">
+	<section class="projects d-flex two">
 		<div class="project justify-content-center align-self-center">
 			<img src="https://dl.dropboxusercontent.com/s/yqffuc60pnbb613lhzg68/reofound.png?rlkey=3sse6okl02sygq3cj1evif301&dl=0" alt="Refound"/>
 			<h2>Refound</h2>
@@ -219,7 +233,7 @@
 		</div>
 	</section>
 
-	<section class="projects d-flex two">
+	<section class="projects d-flex one">
 		<div class="project justify-content-center align-self-center"> 
 			<img src="https://dl.dropboxusercontent.com/s/5gpasrbwu60utjg2591vf/Screenshot-2024-03-20-at-10.12.03-PM.png?rlkey=h7abzinzi6qub3tz877heite2&dl=0" alt="Alphabet Spaces"/>
 			<h2>Alphabet Spaces</h2>
@@ -231,7 +245,7 @@
 		</div>
 	</section>
 	
-	<section class="projects d-flex one">
+	<section class="projects d-flex two">
 		<div class="project justify-content-center align-self-center">
 			<img src="https://dl.dropboxusercontent.com/s/b32ly00009cu58hza2hi9/SPOTx.png?rlkey=kgjoxu969e9dub1xmbjlsa53d&dl=0" alt="SpotX, Solana/Polygon Dapp for Loyalty Rewards"/>
 			<h2>SPOTx</h2>
@@ -242,18 +256,6 @@
 			</div>
 			<div class="row">
 				<a href="https://github.com/genesisbarrios/SPOTx" target="_blank" class="view-button"> View Code </a>
-			</div>
-		</div>
-	</section>
-
-	<section class="projects d-flex two">
-		<div class="project justify-content-center align-self-center">
-			<img src="https://dl.dropboxusercontent.com/s/7hnf2b8eduzluzk72oppm/EnigmaLabelDAO.png?rlkey=lmukobfj3j5qkvejjk0jdzc2r&dl=0" alt="EnigmaLabelDAO - Ethereum Dapp to join a Record Label DAO."/>
-			<h2>EnigmaLabelDao</h2>
-			<p class="serif" style="margin-bottom:2px;"> January 2022 </p>
-			<p class="serif content" style="font-size:0.8em; margin-bottom:2px;"> An Ethereum(Rinkeby) Dapp to join a Record Label DAO(Decentralized Autonomous Organization). Built with React, and 3rdweb. Based on the Build your own DAO with just Javascript Course by <a href="buildspace.so">Buildspace</a>. Blockchain Components: ERC-1155 NFT, custom ERC-20 token($ENIGMA), Governance Contract.</p>
-			<div class="row" style="margin-bottom:5px;">
-				<a href="https://RecordLabel-DAO.genesisbarrios1.repl.co" target="_blank" class="view-button"> View Project </a>
 			</div>
 		</div>
 	</section>
@@ -278,7 +280,7 @@
 			<img src="https://dl.dropboxusercontent.com/s/c85bhc2mxlo5rzz2ugdic/Screen-Shot-2021-03-14-at-11.33.44-PM.png?rlkey=a0mf2o5upuhbev1ffv19sqjd6&dl=0" alt="Wavy Pads Web Synth"/>
 			<h2>Wavy Pads</h2>
 			<p class="serif"> March 2021 </p>
-			<p class="serif content"> A Web Based Synth with EQ, Gain, Decay, Reverb, Octave, and Key Inputs. Built with two.js.</p>
+			<p class="serif content"> A Web Based Synth with EQ, Gain, Decay, Reverb, Octave, and Key Inputs. Built with one.js.</p>
 			<div class="row">
 				<a href="https://github.com/genesisbarrios/wavypads" target="_blank" class="view-button"> View Project </a>
 			</div>
