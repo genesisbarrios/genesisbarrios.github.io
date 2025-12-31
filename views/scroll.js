@@ -1,59 +1,75 @@
-function scroll(target, duration){
-    var target = document.getElementById(target);
-    var targetPosition = target.getBoundingClientRect().top;
-    var startPosition = window.pageYOffset;
-    var distance = targetPosition - startPosition;
-    var startTime = null;
+// ...existing code...
+function scroll(targetId, duration){
+    const targetEl = document.getElementById(targetId);
+    if (!targetEl) return; // guard if element missing
+
+    const targetPosition = targetEl.getBoundingClientRect().top;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    let startTime = null;
 
     function animation(currentTime){
-        if(startTime == null){
+        if(startTime === null){
             startTime = currentTime;
-        }   
-        
-        var timeElapsed = currentTime - startTime;
-        var run = ease(timeElapsed, startPosition, distance, duration);
-        window.scrollTo(0,run);
-        
+        }
+
+        const timeElapsed = currentTime - startTime;
+        const run = ease(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+
         if(timeElapsed < duration){
             requestAnimationFrame(animation);
         }
     }
 
     function ease(timeElapsed, startPosition, distance, duration){
-        timeElapsed /= duration / 2;
-        if(timeElapsed < 1){
-            return distance / 2 * timeElapsed * timeElapsed + startPosition;
+        // easeInOutQuad corrected
+        let t = timeElapsed / (duration / 2);
+        if(t < 1){
+            return distance / 2 * t * t + startPosition;
         }
-        timeElapsed--;
-        return -distance / 2 * (timeElapsed * (timeElapsed - 2) - 1 + startPosition);
+        t--;
+        return -distance / 2 * (t * (t - 2) - 1) + startPosition;
     }
 
-    //loop through animation() at 60fps
+    // guard duration
+    if (!duration || duration <= 0) {
+        window.scrollTo(0, startPosition + distance);
+        return;
+    }
+
     requestAnimationFrame(animation);
 }
-
+// ...existing code...
 window.onload = function(){
-    var button = document.getElementById("projLink");
+    const button = document.getElementById("projLink");
+    if (button) {
+        button.addEventListener("click", function(){
+            scroll("projects", 1000);
+        });
+    } else {
+        console.warn('projLink element not found — scroll link disabled');
+    }
 
-    button.addEventListener("click",function(){
-        scroll("projects", 1000);
-    });
+    // commented code left as-is
 
-    
+    const topEl = document.getElementById('top');
+    const face = document.getElementById('face');
+    const about = document.getElementById('about');
 
-    // var button = document.getElementById("about");
+    if (topEl && face) {
+        const clientHeight = topEl.clientHeight;
+        face.style.paddingTop = (clientHeight / 6) + 'px';
+    } else {
+        console.warn('top or face element not found — skipping face padding');
+    }
 
-    // button.addEventListener("click",function(){
-    //     scroll("top", 1000);
-    // });
+    if (topEl && about) {
+        const clientHeight2 = topEl.clientHeight;
+        about.style.paddingTop = (clientHeight2 / 6) + 'px';
+    } else {
+        console.warn('top or about element not found — skipping about padding');
+    }
 
-    var clientHeight = document.getElementById('top').clientHeight;
-    var face = document.getElementById('face');
-    var about = document.getElementById('about');
-
-    console.log("got elements by id");
-
-    face.style.paddingTop = clientHeight / 6;
-    about.style.paddingTop = clientHeight / 6;
-    console.log("set margins");
+    console.log("scroll.js initialization complete");
 };

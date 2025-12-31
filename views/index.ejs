@@ -3,7 +3,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<meta name="description" content="Genesis Barrios Portfolio Website">
-	<meta name="keywords" content= "software engineer, web development, software development, programming">
+	<meta name="keywords" content= "software engineer, web development, software development, programming, web developer, full stack software engineer, full stack dev, full stack developer, entrepreneur, solopreneur, programmer">
 	<meta name="author" content="Genesis Barrios">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -18,81 +18,105 @@
 <body>
 	
 	<script type="module">
-		import * as one from 'https://onejsfundamentals.org/onejs/resources/onejs/r115/build/one.module.js';
-		
-		
+		import * as THREE from 'https://unpkg.com/three@0.158.0/build/three.module.js';
 
 		window.onload = function() {
-			var one = new one({
-				fullscreen: true,
-				autostart: false
-			  })
-			  
-			// Canvas
+		// Canvas
 			const canvas = document.querySelector('canvas.webgl');
+			if (!canvas) { console.warn('canvas.webgl not found'); return; }
 
-			let scene, camera, renderer, particlesone, star, stars, particlesCount;
-			let particlesMesh;
+			// Scene / Camera / Renderer
+			const scene = new THREE.Scene();
+			const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+			camera.position.z = 2;
+			camera.rotation.x = Math.PI / 2;
 
-			scene = new one.scene();
-			camera = new one.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
-			camera.position.z = 1;
-			camera.rotation.x = Math.PI/2;
-
-			renderer = new one.WebGLRenderer({  
-				canvas: canvas,
-				alpha: true 
-			});
+			const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
 			renderer.setSize(window.innerWidth, window.innerHeight);
-			renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-			//canvas.appendChild(renderer.domElement);
+			renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-			const material = new one.MeshBasicMaterial()
-			material.color = new one.Color(0xffffff)
-
-			const particlesGeo = new one.BufferGeometry();
-			particlesCount = 10000;
+			// Particles
+			const particlesCount = 10000;
 			const posArray = new Float32Array(particlesCount * 3);
-
-			for(let i=0; i < particlesCount * 3; i++){
-				posArray[i] = (Math.random() - 0.5) * 5;
+			for (let i = 0; i < particlesCount; i++) {
+				posArray[i * 3] = (Math.random() - 0.5) * 5;
+				posArray[i * 3 + 1] = (Math.random() - 0.5) * 5;
+				posArray[i * 3 + 2] = (Math.random() - 0.5) * 5;
 			}
+			const particlesGeo = new THREE.BufferGeometry();
+			particlesGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
 
-			particlesGeo.setAttribute('position', new one.BufferAttribute(posArray, 3))
+			// create a circular sprite texture using canvas
+			const circleCanvas = document.createElement('canvas');
+			const size = 128;
+			circleCanvas.width = size;
+			circleCanvas.height = size;
+			const ctx = circleCanvas.getContext('2d');
+			// clear
+			ctx.clearRect(0, 0, size, size);
+			// draw circle
+			ctx.fillStyle = 'white';
+			ctx.beginPath();
+			ctx.arc(size / 4, size / 4, size / 4, 0, Math.PI * 2);
+			ctx.fill();
 
-			particlesMesh = new one.Points(particlesGeo, material)
+			const circleTexture = new THREE.CanvasTexture(circleCanvas);
+			circleTexture.needsUpdate = true;
+
+			const material = new THREE.PointsMaterial({
+				color: 0xffffff,
+				size: 0.03,
+				map: circleTexture,
+				alphaTest: 0.01,
+				transparent: true,
+				sizeAttenuation: true,
+			});
+			// ensure proper blending and prevent writing to depth buffer so translucent circles render nicely
+			material.blending = THREE.NormalBlending;
+			material.depthWrite = false;
+
+			const particlesMesh = new THREE.Points(particlesGeo, material);
 			scene.add(particlesMesh);
 
-			document.addEventListener('mouseover', animateParticles);
-			let mouseX = 0;
-			let mouseY = 0;
+			// Mouse interaction
+			let mouseX = 0, mouseY = 0;
+			document.addEventListener('mousemove', (e) => {
+				mouseX = e.clientX - window.innerWidth / 2;
+				mouseY = e.clientY - window.innerHeight / 2;
+			});
 
-			function animateParticles(event){
-				console.log('animate particles')
-				mouseY = event.clientY;
-				mouseX = event.clientX;
-			}
-
-			const clock = new one.Clock();
-
+			// Animation
+			const clock = new THREE.Clock();
 			const tick = () => {
-				const elapsedTime = clock.getElapsedTime()
-
-				particlesMesh.rotation.y = -.1 * elapsedTime;
-				if(mouseX > 0){
-					particlesMesh.rotation.y = mouseX * (elapsedTime * 0.0005) 
-					particlesMesh.rotation.x = mouseY * (elapsedTime * 0.0005) 
+				const elapsedTime = clock.getElapsedTime();
+				particlesMesh.rotation.y = -0.1 * elapsedTime;
+				if (mouseX !== 0 || mouseY !== 0) {
+					particlesMesh.rotation.y = mouseX * (elapsedTime * 0.0005);
+					particlesMesh.rotation.x = mouseY * (elapsedTime * 0.0005);
 				}
-
 				renderer.render(scene, camera);
 				window.requestAnimationFrame(tick);
-			}
-
+			};
 			tick();
 
+		let targetX = 0, targetY = 0;
+			window.addEventListener('mousemove', (e) => {
+				targetX = (e.clientX - window.innerWidth / 2);
+				targetY = (e.clientY - window.innerHeight / 2);
+			});
+
+			// Handle resize
+			window.addEventListener('resize', () => {
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+				renderer.setSize(window.innerWidth, window.innerHeight);
+				renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+			});
+
+		//typewriter
 			var i =0;
 			var aboutText = " cd genesisbarrios/About\r\ngenesisbarrios:~$ cat about.txt \r\n";
-			var aboutText2 = "\r\nHello! My name is Genesis Barrios.\r\nI'm a Software Engineer based in Miami, Florida. 🌴 \r\nI got my Bachelor's of Science in Computer Science in Spring of 2020 from Florida International University.\r\nI am currently working as an Associate Software Engineer where I build and support applications in the Azure cloud.\r\nI'm a Full Stack Engineer having worked with various technologies including Javascript, JQuery, Angular, React,\r\n Node.js, MongoDB, Firebase, SQL, MySQL, MicrosoftSQL, Tomcat, Java, C#, .NET, Swift, Web GL(Babylon.js, one.js), and Python. I'm\r\n currently dedicating my free time to learning and building with Web3 technologies like Soldiity and Web3.js. I love building creative solutions for myself and others, and I offer support through <a href='https://www.enigmasoftwareconsulting.com' style='color:white; font-weight:bold;' target='_blank'>Enigma Software Consulting.</a>";
+			//var aboutText2 = "\r\nHello! My name is Genesis Barrios.\r\nI'm a Software Engineer based in Miami, Florida. 🌴 \r\nI got my Bachelor's of Science in Computer Science in Spring of 2020 from Florida International University.\r\nI am currently working as an Associate Software Engineer where I build and support applications in the Azure cloud.\r\nI'm a Full Stack Engineer having worked with various technologies including Javascript, JQuery, Angular, React,\r\n Node.js, MongoDB, Firebase, SQL, MySQL, MicrosoftSQL, Tomcat, Java, C#, .NET, Swift, Web GL(Babylon.js, one.js), and Python. I'm\r\n currently dedicating my free time to learning and building with Web3 technologies like Soldiity and Web3.js. I love building creative solutions for myself and others, and I offer support through <a href='https://www.enigmasoftwareconsulting.com' style='color:white; font-weight:bold;' target='_blank'>Enigma Software Consulting.</a>";
 			var speed = 50;
 
 			function typeWriter(){
@@ -103,14 +127,25 @@
 					i++;
 					setTimeout(typeWriter, speed);
 				}
-				if(i == aboutText.length - 1) {
-					document.getElementById("aboutText2").innerHTML += aboutText2;
+				// if(i == aboutText.length - 1) {
+				// 	document.getElementById("aboutText2").innerHTML += aboutText2;
+				// }
+				if (i >= aboutText.length) {
+					const hidden = document.querySelector('.about-hidden');
+					if (hidden && hidden.dataset.revealed !== '1') {
+						hidden.dataset.revealed = '1';
+						hidden.style.display = 'block';
+						hidden.style.opacity = 0;
+						hidden.style.transition = 'opacity 400ms ease';
+						requestAnimationFrame(() => { hidden.style.opacity = 1; });
+					}
 				}
 			}
 
 			typeWriter();
 		};
-	</script>
+     </script>
+	 
 	<div class="bg">
 		<canvas class="webgl">
 		</canvas>
@@ -125,11 +160,13 @@
 							<div class="about-cont" >
 								<p class="bottom-margin" id="aboutText">genesisbarrios:~$ cd genesisbarrios/About </p>
 								<br>
+								<div class="about-hidden" style="display: none;">
 								<p class="bottom-margin" id="aboutText2">Hello! My name is Genesis Barrios. I'm a Software Engineer based in Miami, Florida. 🌴 </p>
 								<p class="bottom-margin white">I got my Bachelor's of Science in Computer Science in 2020 from Florida International University, and I worked as a Software Engineer for four years at Assurant, where I built and supported SMS and Billing applications in the Azure cloud as well as creating new components that sped up many processes.</p>
 								<p class="bottom-margin white">I'm a Full Stack Engineer having worked with various technologies including Javascript, Typescript, Tailwind, React, Next.js Node.js, MongoDB, Firebase, SQL, MySQL, MicrosoftSQL, Tomcat, Java, C#, .NET, and Web GL(Babylon.js, three.js).</p>
 								<p class="bottom-margin white">And an Artist, Music Producer, and Audio Engineer, dedicating practically my whole life since 8 years old to learning everything I can about music. </p>
 								<p class="bottom-margin white">I'm currently building my freelancing business <a href='https://www.enigma-labs.com' style='font-weight:bold;' target='_blank'>Enigma Labs</a>- offering Web Development, Music Production, Audio Engineering, and Visuals.</p>
+								</div>
 							</div>
 						</div>
 						<div class="col-1">
