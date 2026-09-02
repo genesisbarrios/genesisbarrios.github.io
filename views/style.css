@@ -344,7 +344,37 @@ a:hover{
     #about{
         font-size: 0.70em;
         height:60%;
-        width:80%;
+        /* Leave room on the right for the fixed .sidebar icon column (50px)
+           so the terminal box never renders underneath it. */
+        width: calc(100% - 70px);
+        margin-left:2%;
         margin-top: -160%;
+    }
+
+    /* Terminal window: was double-shrunk (80% of an already-80%-wide, off-center
+       parent) and its text had no wrap constraints, so both the box and its
+       content overflowed the viewport on mobile. Make it a real, centered,
+       full-width box and let its text wrap instead of spilling out. */
+    .fill{
+        width:100%;
+        max-width:100%;
+        margin: 5% auto 0;
+        padding: 5%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .about-cont{
+        display:block;
+        width:100%;
+        max-width:100%;
+        box-sizing:border-box;
+    }
+
+    .about-cont p, .about-cont h2, #aboutText{
+        white-space: pre-wrap !important;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        max-width: 100%;
     }
 }
